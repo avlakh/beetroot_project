@@ -1,7 +1,9 @@
 <template>
   <mobile-menu/>
   <site-header/>
+  <main>
   <router-view/>
+  </main>
 </template>
 
 <script>

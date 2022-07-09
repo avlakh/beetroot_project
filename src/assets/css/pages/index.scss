@@ -1,7 +1,3 @@
-@use '../header.scss';
-@use '../footer.scss';
-
-// color vars
 
 $royal-blue: #2405F2;
 $dark-blue: #282938;
@@ -10,151 +6,6 @@ $yellow: #FCD980;
 $tint-blue: #1C1E53;
 $accent: #EEF4FA;
 $light-yellow: rgba(252, 217, 128, 0.1);
-
-// norm
-
-*, *::before, *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    background-color: #fff;
-    font-family: 'Poppins', 'Manrope', sans-serif;
-    color: $dark-blue;
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
-
-.container {
-    width: 90%;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-a, button {
-    transition: all .2s ease;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-// general custom styles
-
-h1 {
-    font-weight: 600;
-    font-size: 54px;
-    line-height: 74px;
-}
-
-h2 {
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 64px;
-}
-
-h3 {
-    font-weight: 600;
-    font-size: 38px;
-    line-height: 56px;
-}
-
-h4 {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 56px;
-}
-
-h5 {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 48px;
-}
-
-h6 {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
-}
-
-
-// custom style
-// header
-
-
-
-// main
-// hero section
-
-.hero_section {
-    background-color: $tint-blue;
-    .container {
-        display: flex;
-        justify-content: space-between;
-        gap: 80px;
-        padding: 218px 0 128px;
-    }
-}
-
-.hero_text {
-    width: 50%;
-}
-
-.hero_text_body {
-    margin-bottom: 48px;
-    h1 {
-        color: white;
-        margin-bottom: 24px;
-    }
-    p {
-        font-weight: 500;
-        line-height: 28px;
-        color: rgba($color: #fff, $alpha: 0.7);
-    }
-}
-
-.hero_btn {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-.round_btn {
-    display: block;
-    background-color: #FCD980;
-    border-radius: 41px;
-    padding: 16px 56px;
-    font-family: 'Manrope';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 32px;
-    color: #1B1C2B;
-    &:hover {
-        background-color: #FDE4A6;
-    }
-}
-
-.hero_img {
-    height: 100%;
-    width: 50%;
-    object-fit: cover;
-    padding-top: 23px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
-}
 
 // how we work
 
@@ -739,12 +590,6 @@ h6 {
 }
 
 @media screen and (max-width: 1000px) {
-    .hero_text {
-        width: 100%;
-    }
-    .hero_img {
-        display: none;
-    }
     .we_work .container {
         padding: 64px 0;
         grid-template-columns: none;
@@ -787,6 +632,12 @@ h6 {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .our_projects .container {
+        padding: 64px 0;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .our_projects_text {
         flex-wrap: wrap;
@@ -798,9 +649,8 @@ h6 {
 } 
 
 @media screen and (max-width: 600px) {
-    .hero_btn {
-        flex-direction: column;
-        align-items: flex-start;
+    .we_work_text {
+        padding-right: 0px;
     }
     .we_work_grid {
         grid-template-columns: none;
