@@ -1,1 +1,0 @@
-"use strict";$(function(){$(".faqs_accord").accordion()});

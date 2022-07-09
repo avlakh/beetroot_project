@@ -1,12 +1,4 @@
-// color vars
-
-$royal-blue: #2405F2;
-$dark-blue: #282938;
-$grey: #F4F6FC;
-$yellow: #FCD980;
-$tint-blue: #1C1E53;
-$accent: #EEF4FA;
-$light-yellow: rgba(252, 217, 128, 0.1);
+@import '@/assets/css/vars.scss';
 
 // footer 
 // footer top 
@@ -60,6 +52,10 @@ $light-yellow: rgba(252, 217, 128, 0.1);
         line-height: 28px;
         color: $dark-blue;
         opacity: 0.8;
+        &:hover {
+            color: #000;
+            opacity: 1;
+        }
     }
 }
 
@@ -96,15 +92,33 @@ $light-yellow: rgba(252, 217, 128, 0.1);
     justify-content: space-between;
 }
 
-.footer_bottom_copy h6 {
+.footer_bottom_copy a {
+    font-weight: 500;
     font-size: 16px;
     line-height: 28px;
     color: $dark-blue;
 }
 
+.footer_bottom_copy:hover {
+    animation: bounce 1.5s infinite;
+}
+
 .footer_bottom_menu {
     display: flex;
     gap: 32px;
+    li:hover {
+        animation: bounce 1.5s infinite;
+    }
+}
+
+@keyframes bounce {
+    0%,  
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 // responsive 
