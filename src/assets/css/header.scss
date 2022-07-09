@@ -1,0 +1,275 @@
+// color vars
+
+$royal-blue: #2405F2;
+$dark-blue: #282938;
+$grey: #F4F6FC;
+$yellow: #FCD980;
+$tint-blue: #1C1E53;
+$accent: #EEF4FA;
+$light-yellow: rgba(252, 217, 128, 0.1);
+
+// norm
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    color: $dark-blue;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+a, button {
+    transition: all .2s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+// general custom styles
+
+h1 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 74px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 56px;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56px;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h6 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 92px;
+    background-color: $tint-blue;
+    z-index: 100;
+}
+
+.header_flex {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_menu_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+}
+
+.hamburger_menu {
+    display: none;
+}
+
+#main_menu ul {
+    display: flex;
+    gap: 12px;
+    li {
+        transition: all .2s ease;
+        a {
+            display: block;
+            font-weight: 500;
+            line-height: 28px;
+            color: white;
+            position: relative;
+            padding: 10px;
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+}
+
+#header_contact_btn {
+    display: block;
+    font-weight: 500;
+    line-height: 28px;
+    color: white;
+    padding: 16px 48px;
+    border: 2px solid rgba(244, 246, 252, 0.2);
+    border-radius: 41px;
+    &:hover {
+        background-color: rgba(244, 246, 252, 0.2);
+    }
+}
+
+.arrow_btn {
+    display: block;
+    position: relative;
+    font-weight: 500;
+    line-height: 28px;
+    color: white;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 13px;
+        right: -41px;
+        width: 24px;
+        border-top: 2px solid #F4F6FC;
+        transition: all .2s ease;
+    }
+    &:after {
+        content: '';
+        height: 7px;
+        width: 7px;
+        transform: rotate(-135deg);
+        position: absolute;
+        top: 11px;
+        right: -41px;
+        border-bottom: 2px solid #F4F6FC;
+        border-left: 2px solid #F4F6FC;
+        transition: all .2s ease;
+    }
+    &:hover {
+        color: $yellow;
+    }
+    &:hover::before,
+    &:hover::after {
+        border-color: $yellow;
+        transform: translateX(30px);
+    }
+    &:hover::after {
+        transform: translateX(30px) rotate(-135deg);
+    }
+}
+
+// burger
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+
+ .hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: #fff;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; }
+    .hamburger:hover {
+      opacity: 0.7; }
+    .hamburger.is-active:hover {
+      opacity: 0.7; }
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+      background-color: #fff; }
+  
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative; }
+  
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    background-color: #fff;
+    margin-top: -2px; }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; }
+    .hamburger-inner::before, .hamburger-inner::after {
+      content: "";
+      display: block; }
+    .hamburger-inner::before {
+      top: -10px; }
+    .hamburger-inner::after {
+      bottom: -10px; }
+  
+  /*
+     * Arrow
+     */
+  .hamburger--arrow.is-active .hamburger-inner::before {
+    transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+  
+  .hamburger--arrow.is-active .hamburger-inner::after {
+    transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+
+
+// responsive 
+// header
+
+@media screen and (max-width: 1000px) {
+    #main_menu {
+        display: none;
+    }
+    .main_menu_wrap .hamburger_menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #header_contact_btn {
+        display: none;
+    }
+}
