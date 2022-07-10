@@ -1,0 +1,37 @@
+[
+    {
+        "img": "about_us/about_us_home_img.jpg",
+        "imgAlt": "about_us_people_sitting_on_the_table",
+        "headingBg": "Our designs solve problems",
+        "headingSm": "About us",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "img": "about_us/our_mission_guy_standing.jpg",
+        "imgAlt": "our_mission_guy_standing",
+        "headingBg": "Inspire, Innovate, Share",
+        "headingSm": "Our Mission",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+        "img": "about_us/our_mission_girls_meeting.jpg",
+        "imgAlt": "our_mission_girls_meeting",
+        "headingBg": "Laser focus",
+        "headingSm": "Our Vision",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+        "img": "",
+        "imgAlt": "",
+        "headingBg": "",
+        "headingSm": "",
+        "paragraph": ""
+    },
+    {
+        "img": "",
+        "imgAlt": "",
+        "headingBg": "",
+        "headingSm": "",
+        "paragraph": ""
+    }
+]

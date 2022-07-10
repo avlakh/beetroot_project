@@ -20,6 +20,12 @@
     <div id="page_overlay"></div>
 </template>
 
+<script>
+export default {
+    name: 'MobileMenu'
+}
+</script>
+
 <style lang="scss" scoped>
 
 #side_block {

@@ -15,7 +15,7 @@
                         <li><router-link to="blog">Blog</router-link></li>
                     </ul>
                 </nav>
-                <router-link to="contact-view" id="header_contact_btn">Contact us</router-link>
+                <router-link to="contact" id="header_contact_btn">Contact us</router-link>
                 <div class="hamburger_menu">
                     <button class="hamburger hamburger--arrow" type="button">
                         <span class="hamburger-box">
@@ -27,6 +27,12 @@
         </div>
     </header>
 </template>
+
+<script>
+export default {
+    name: 'SiteHeader'
+}
+</script>
 
 <style lang="scss" scoped>
     @import '@/assets/css/header.scss';

@@ -18,6 +18,12 @@
         </section>
 </template>
 
+<script>
+export default {
+    name: 'HomeSection'
+}
+</script>
+
 <style lang="scss" scoped>
 
     $royal-blue: #2405F2;

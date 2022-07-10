@@ -41,6 +41,12 @@
         </section>
 </template>
 
+<script>
+export default {
+    name: 'FeatureCards'
+}
+</script>
+
 <style lang="scss" scoped>
 
 @import '@/assets/css/vars.scss';

@@ -1,145 +1,7 @@
-@use '../header';
-@use '../footer';
-
-// color vars
-
-$royal-blue: #2405F2;
-$dark-blue: #282938;
-$grey: #F4F6FC;
-$yellow: #FCD980;
-$tint-blue: #1C1E53;
-$accent: #EEF4FA;
-$light-yellow: rgba(252, 217, 128, 0.1);
-
-*, *::before, *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    background-color: #fff;
-    font-family: 'Poppins', 'Manrope', sans-serif;
-    color: $dark-blue;
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
-
-.container {
-    width: 90%;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-a, button {
-    transition: all .2s ease;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-p {
-    opacity: 0.7;
-    line-height: 28px;
-}
-
-// general custom styles
-
-h1 {
-    font-weight: 600;
-    font-size: 54px;
-    line-height: 74px;
-}
-
-h2 {
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 64px;
-}
-
-h3 {
-    font-weight: 600;
-    font-size: 38px;
-    line-height: 56px;
-}
-
-h4 {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 56px;
-}
-
-h5 {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 48px;
-}
-
-h6 {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
-}
-
-// header
-// imported
-
-// main
-// about us
+@import '@/assets/css/vars.scss';
 
 .about_us_home {
     padding: 220px 0 105px;
-}
-
-.about_us_home_flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 120px;
-}
-
-.about_us_home_descr {
-    align-self: flex-start;
-    padding-top: 24px;
-    h4 {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 32px;
-        color: $dark-blue;
-        margin-bottom: 10px;
-    }
-    h2 {
-        font-weight: 600;
-        font-size: 54px;
-        line-height: 74px;
-        color: $dark-blue;
-        margin-bottom: 32px;
-    }
-    p {
-        color: $dark-blue;
-    }
-}
-
-.about_us_home_img {
-    height: 100%;
-    width: 100%;
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        vertical-align: top;
-    }
 }
 
 // who we are
@@ -225,33 +87,6 @@ h6 {
     background-color: #EEF4FA;
     .container {
         padding: 128px 0;
-    }
-}
-
-.our_mission_flex {
-    display: flex;
-    gap: 140px;
-    &:first-of-type {
-        margin-bottom: 78px;
-    }
-}
-
-.our_mission_descr {
-    align-self: center;
-    h4 {
-        font-size: 16px;
-        line-height: 28px;
-        color: $dark-blue;
-    }
-}
-
-.our_mission_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    img {
-        width: 100%;
-        height: 100%;
     }
 }
 
@@ -402,12 +237,12 @@ h6 {
     }
     .our_process_flex {
         align-items: center;
-        h6::before, h6::after {
+        h6::after {
             content: none;
         } 
     }
     .our_process_card {
-        align-self: center;
+        justify-self: center;
     }
 }
 
@@ -447,9 +282,8 @@ h6 {
         padding: 64px 0;
     }
     .our_process_flex {
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 30px;
     }
     .benefits {
         padding: 64px 0;
@@ -469,6 +303,9 @@ h6 {
     }
     .our_mission .container {
         padding: 64px 0;
+    }
+    .our_process_flex {
+        flex-wrap: wrap;
     }
     .benefits {
         padding: 64px 0;

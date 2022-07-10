@@ -35,6 +35,12 @@
         </section>
 </template>
 
+<script>
+export default {
+    name: 'BlogCards'
+}
+</script>
+
 <style lang="scss" scoped>
 
     @import '@/assets/css/vars.scss';
