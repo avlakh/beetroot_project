@@ -69,7 +69,34 @@
             </div>
         </div>
     </section>
-    <feature-cards/>
+    <section class="features">
+        <div class="container">
+            <div class="features_text">
+                <h6>Features</h6>
+                <h2>Design that solves problems, one product at a time</h2>
+            </div>
+            <div class="features_grid">
+                <template v-for="(item, i) in featureCardsArr">
+                    <feature-cards :key="i" v-if="i === 0" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                </template>
+                <template v-for="(item, i) in featureCardsArr">
+                    <feature-cards :key="i" v-if="i === 1" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                </template>
+                <template v-for="(item, i) in featureCardsArr">
+                    <feature-cards :key="i" v-if="i === 2" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                </template>
+                <template v-for="(item, i) in featureCardsArr">
+                    <feature-cards :key="i" v-if="i === 3" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                </template>
+                <template v-for="(item, i) in featureCardsArr">
+                    <feature-cards :key="i" v-if="i === 4" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                </template>
+                <template v-for="(item, i) in featureCardsArr">
+                    <feature-cards :key="i" v-if="i === 5" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                </template>
+            </div>
+        </div>
+    </section>
     <section class="clients">
             <div class="container">
                 <div class="clients_flex">
@@ -179,6 +206,7 @@
 import HomeSectionVue from '@/components/HomeSection.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
 import BlogCards from '@/components/BlogCards.vue'
+import axios from 'axios'
 
 export default {
     name: 'HomeView',
@@ -186,6 +214,18 @@ export default {
         HomeSectionVue,
         FeatureCards,
         BlogCards
+    },
+    data () {
+        return {
+            featureCardsArr: []
+        }
+    },
+    created() {
+        axios
+            .get('../data/FeaturesCards.json')
+            .then (resp =>{
+                this.featureCardsArr = resp.data;
+            })
     }
 }
 </script>

@@ -193,6 +193,31 @@
     opacity: 1;
 }
 
+.features {
+    background-color: $grey;
+    padding: 120px 0 128px;
+}
+
+.features_text {
+    padding: 0 310px;
+    h6 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 47px;
+    }
+}
+
+.features_grid {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    gap: 23px 32px;
+}
 
 // our clients' opinion
 
@@ -482,7 +507,15 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    
+    .features {
+        padding: 60px 0 64px;
+    }
+    .features_text {
+        padding: 0px 150px;
+    }
+    .features_grid {
+        grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    }
     .form_bg {
         padding: 40px 40px;
     }
@@ -495,6 +528,9 @@
     .we_work .container {
         padding: 64px 0;
         grid-template-columns: none;
+    }
+    .features_text {
+        padding: 0px 75px;
     }
     .clients {
         padding: 55px 0;
@@ -534,6 +570,9 @@
         flex-wrap: wrap;
         gap: 15px;
     }
+    .features_grid {
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
+    }
 } 
 
 @media screen and (max-width: 600px) {
@@ -542,6 +581,9 @@
     }
     .we_work_grid {
         grid-template-columns: none;
+    }
+    .features_text {
+        padding: 0px;
     }
     .our_projects .container {
         padding: 64px 0;

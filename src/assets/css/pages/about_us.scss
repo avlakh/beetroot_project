@@ -90,10 +90,9 @@
     }
 }
 
-// benefits
-// reused features from the index.scss
+// features || benefits 
 
-.benefits {
+.features {
     padding: 128px 0;
     h2 {
         text-align: center;
@@ -103,24 +102,13 @@
     }
 }
 
-.benefits_grid {
+.features_grid {
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
     gap: 32px;
     margin-bottom: 48px;
-    .benefits_card {
+    .features_card {
         background-color: $grey;
-        padding: 48px 32px 42px 48px;
-        img {
-            padding-bottom: 25px;
-        }
-        h6 {
-            padding-bottom: 12px;
-        }
-        p {
-            line-height: 28px;
-            color: rgba(40, 41, 56, 0.7)
-        }
     }
 }
 
@@ -168,58 +156,6 @@
     gap: 32px;
 }
 
-.our_team_card {
-    background-color: #fff;
-    padding: 48px 63px 32px;
-    .our_team_photo_link {
-        position: relative;
-        display: block;
-        margin-bottom: 22px;
-        overflow: hidden;
-        &:hover .our_card_img_bg {
-            transform: translate(0);
-        }
-    }
-    .our_card_img_bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        width: 168px;
-        height: 168px;
-        border-radius: 50%;
-        transform: translate(-168px);
-        background: linear-gradient(348.37deg, #5239FA 17.97%, rgba(255, 255, 255, 0) 79.2%);
-        .our_card_soc_list {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 10px;
-            svg:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
-    h6 {
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 36px;
-        text-align: center;
-        color: #1D2130;
-    }
-    h5 {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 28px;
-        color: #1D2130;
-        text-align: center;
-        opacity: 0.7;
-    }
-}
-
-
 // footer
 // imported
 
@@ -228,12 +164,6 @@
 @media screen and (max-width: 1400px) {
     .our_team_grid {
         grid-template: 1fr 1fr / 1fr 1fr;
-    }
-    .our_team_card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     .our_process_flex {
         align-items: center;
@@ -257,7 +187,7 @@
         flex-wrap: wrap;
         gap: 50px;
     }
-    .benefits_grid {
+    .features_grid {
         grid-template: 1fr / 1fr 1fr;
     }
 }
@@ -285,7 +215,7 @@
         justify-content: center;
         gap: 30px;
     }
-    .benefits {
+    .feature {
         padding: 64px 0;
     }
     .benefits_users {
@@ -307,13 +237,13 @@
     .our_process_flex {
         flex-wrap: wrap;
     }
-    .benefits {
+    .features {
         padding: 64px 0;
     }
-    .benefits h2 {
+    .features h2 {
         width: 100%;
     }
-    .benefits_grid {
+    .features_grid {
         grid-template: 1fr 1fr / 1fr;
     }
 }

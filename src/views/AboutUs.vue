@@ -42,13 +42,59 @@
         </div>
     </section>
     <section class="our_mission">
+        <div class="container">
+            <template v-for="(item, i) in ourMissionArr">
+                <our-mission :key="i" v-if="i === 1" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            </template>
+            <template v-for="(item, i) in ourMissionArr">
+                <our-mission-reverse :key="i" v-if="i === 2" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            </template>
+        </div>
+    </section>
+    <section class="features container">
+        <h2>The benefits of working with us</h2>
+        <div class="features_grid">
+            <template v-for="(item, i) in featureCardsArr">
+                <feature-cards :key="i" v-if="i === 6" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            </template>
+            <template v-for="(item, i) in featureCardsArr">
+                <feature-cards :key="i" v-if="i === 7" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            </template>
+            <template v-for="(item, i) in featureCardsArr">
+                <feature-cards :key="i" v-if="i === 8" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            </template>
+        </div>
+        <div class="benefits_users">
+            <div class="benefits_users_numbers">
+                <h3>100.000+</h3>
+                <h5>Finsweet Users</h5>
+            </div>
+            <div class="benefits_users_logos">
+                <a href="#"><img src="../assets/images/about_us/benefits_users/logo1.svg" alt="logo1"></a>
+                <a href="#"><img src="../assets/images/about_us/benefits_users/logo2.svg" alt="logo2"></a>
+                <a href="#"><img src="../assets/images/about_us/benefits_users/logo3.svg" alt="logo3"></a>
+                <a href="#"><img src="../assets/images/about_us/benefits_users/logo4.svg" alt="logo4"></a>
+                <a href="#"><img src="../assets/images/about_us/benefits_users/logo5.svg" alt="logo5"></a>
+            </div>
+        </div>
+    </section>
+    <section class="our_team">
             <div class="container">
-                <template v-for="(item, i) in ourMissionArr">
-                    <our-mission :key="i" v-if="i === 1" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
-                </template>
-                <template v-for="(item, i) in ourMissionArr">
-                    <our-mission-reverse :key="i" v-if="i === 2" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
-                </template>
+                <h2>Meet our team</h2>
+                <div class="our_team_grid">
+                    <template v-for="(item, i) in teamCardsArr">
+                        <team-cards :key="i" v-if="i === 0" :headingName="item.headingName" :headingPosition="item.headingPosition" :img="item.img" :imgAlt="item.imgAlt"/>
+                    </template>
+                    <template v-for="(item, i) in teamCardsArr">
+                        <team-cards :key="i" v-if="i === 1" :headingName="item.headingName" :headingPosition="item.headingPosition" :img="item.img" :imgAlt="item.imgAlt"/>
+                    </template>
+                    <template v-for="(item, i) in teamCardsArr">
+                        <team-cards :key="i" v-if="i === 2" :headingName="item.headingName" :headingPosition="item.headingPosition" :img="item.img" :imgAlt="item.imgAlt"/>
+                    </template>
+                    <template v-for="(item, i) in teamCardsArr">
+                        <team-cards :key="i" v-if="i === 3" :headingName="item.headingName" :headingPosition="item.headingPosition" :img="item.img" :imgAlt="item.imgAlt"/>
+                    </template>
+                </div>
             </div>
         </section>
 </template>
@@ -58,16 +104,22 @@
 import axios from 'axios';
 import OurMission from '@/components/OurMission.vue';
 import OurMissionReverse from '@/components/OurMissionReverse.vue'
+import FeatureCards from '@/components/FeatureCards.vue'
+import TeamCards from '@/components/TeamCards.vue'
 
 export default {
     name: 'AboutUs',
     components: {
-        OurMission,
-        OurMissionReverse
-    },
+    OurMission,
+    OurMissionReverse,
+    FeatureCards,
+    TeamCards
+},
     data () {
         return {
-            ourMissionArr: []
+            ourMissionArr: [],
+            featureCardsArr: [],
+            teamCardsArr: []
         }
     },
     created() {
@@ -75,7 +127,16 @@ export default {
             .get('../data/OurMission.json')
             .then (resp =>{
                 this.ourMissionArr = resp.data;
-                console.log(this.OurMission)
+            }),
+        axios 
+            .get('../data/FeatureCards.json')
+            .then (resp => {
+                this.featureCardsArr = resp.data;
+            }),
+        axios
+            .get('../data/TeamCards.json')
+            .then (resp => {
+                this.teamCardsArr = resp.data;
             })
     }
 
