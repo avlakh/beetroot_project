@@ -99,4 +99,19 @@ export default {
             }
         }
     }
+
+    @media screen and (max-width: 1200px) {
+    .features_users {
+        flex-direction: column;
+    }
+    @media screen and (max-width: 1000px) {
+        .features_users {
+        gap: 60px;
+        }
+        .features_users_logos {
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+    }
+}
 </style>
