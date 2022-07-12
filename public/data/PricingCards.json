@@ -1,0 +1,53 @@
+[
+    {
+        "headingPrice": "$299",
+        "headingPriceDescr": "Per Design",
+        "headingProject": "Landing Page",
+        "projectParagraph": "When you’re ready to go beyond prototyping in Figma, Webflow’s ready to help.",
+        "svgActive": "pricing_card_pointer.svg",
+        "svgActiveAlt": "active_feature",
+        "svgInactive": "pricing_card_pointer_na.svg",
+        "svgInactiveAlt": "inactive_feature",
+        "featureOne": "All limited links",
+        "featureTwo": "Own analytics platform",
+        "featureThree": "Chat support",
+        "featureFour": "Optimize hashtags",
+        "featureFive": "Unlimited users",
+        "featureSix": "Assist and Help",
+        "features_na": true
+    },
+    {
+        "headingPrice": "$399",
+        "headingPriceDescr": "Multi Design",
+        "headingProject": "Website Page",
+        "projectParagraph": "When you’re ready to go beyond prototyping in Figma, Webflow’s ready to help.",
+        "svgActive": "pricing_card_pointer.svg",
+        "svgActiveAlt": "active_feature",
+        "svgInactive": "pricing_card_pointer_na.svg",
+        "svgInactiveAlt": "inactive_feature",
+        "featureOne": "All limited links",
+        "featureTwo": "Own analytics platform",
+        "featureThree": "Chat support",
+        "featureFour": "Optimize hashtags",
+        "featureFive": "Unlimited users",
+        "featureSix": "Assist and Help",
+        "features_na": false
+    },
+    {
+        "headingPrice": "$499 +",
+        "headingPriceDescr": "Per Design",
+        "headingProject": "Complex Project",
+        "projectParagraph": "When you’re ready to go beyond prototyping in Figma, Webflow’s ready to help.",
+        "svgActive": "pricing_card_pointer.svg",
+        "svgActiveAlt": "active_feature",
+        "svgInactive": "pricing_card_pointer_na.svg",
+        "svgInactiveAlt": "inactive_feature",
+        "featureOne": "All limited links",
+        "featureTwo": "Own analytics platform",
+        "featureThree": "Chat support",
+        "featureFour": "Optimize hashtags",
+        "featureFive": "Unlimited users",
+        "featureSix": "Assist and Help",
+        "features_na": false
+    }
+]

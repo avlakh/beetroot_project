@@ -338,66 +338,6 @@
     }
 }
 
-// faqs
-
-.faqs {
-    padding: 128px 0;
-}
-
-.faqs_flex {
-    display: flex;
-    gap: 95px;
-}
-
-.faqs_descr {
-    h3 {
-        color: $dark-blue;
-        margin-bottom: 16px;
-    }
-    a {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 32px;
-        text-align: center;
-        color: $royal-blue;
-        opacity: 0.8;
-        transition: all .2s ease-out;
-        &:hover {
-            color: #000;
-        }
-    }
-}
-
-.faqs_number {
-    margin-right: 56px;
-}
-
-.faqs_text {
-    padding-left: 59px;
-}
-
-.faqs_accord {
-    .faqs_heading {
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 36px;
-        color: $dark-blue;
-    }
-    .faqs_number {
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 36px;
-        color: $royal-blue;
-    }
-    p {
-        padding-left: 63px;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 32px;
-        color: $dark-blue;
-        opacity: 0.8;
-    }
-}
 
 // contact form
 

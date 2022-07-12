@@ -145,38 +145,7 @@
                 </div>
             </div>
         </section>
-        <section class="faqs">
-            <div class="container">
-                <div class="faqs_flex">
-                    <div class="faqs_descr">
-                        <h3>Frequently asked questions</h3>
-                        <router-link to="contact">Contact us for more info</router-link>
-                    </div>
-                    <ul class="faqs_accord">
-                        <h4 class="faqs_heading"><span class="faqs_number">01</span>How much time does it take?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">02</span>What is your class naming convention?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">03</span>How do you communicate?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">04</span>I have a bigger project. Can you handle it?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">05</span>What is your class naming convention?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <faqs-accord/>
         <section class="contact container">
             <div class="form_bg" :style="{'background-image':'url(require(@/assets/images/home/contact/form_bg.jpg))'}">
                 <h2>Building stellar websites for early startups</h2>
@@ -206,6 +175,7 @@
 import HomeSectionVue from '@/components/HomeSection.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
 import BlogCards from '@/components/BlogCards.vue'
+import FaqsAccord from '@/components/FaqsAccord.vue'
 import axios from 'axios'
 
 export default {
@@ -213,7 +183,8 @@ export default {
     components: {
         HomeSectionVue,
         FeatureCards,
-        BlogCards
+        BlogCards,
+        FaqsAccord
     },
     data () {
         return {
@@ -222,7 +193,7 @@ export default {
     },
     created() {
         axios
-            .get('../data/FeaturesCards.json')
+            .get('../data/FeatureCards.json')
             .then (resp =>{
                 this.featureCardsArr = resp.data;
             })
