@@ -1,5 +1,7 @@
 @import '@/assets/css/vars.scss';
 
+// about us
+
 .about_us_home {
     padding: 220px 0 105px;
 }
@@ -90,8 +92,7 @@
     }
 }
 
-// features || benefits 
-
+// features
 .features {
     padding: 128px 0;
     h2 {
@@ -112,33 +113,6 @@
     }
 }
 
-.benefits_users {
-    display: flex;
-    gap: 89px;
-    align-items: center;
-}
-
-.benefits_users_numbers h5 {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
-    color: $dark-blue;
-    opacity: 0.7;
-}
-
-.benefits_users_logos {
-    display: flex;
-    gap: 70px;
-    img {
-        width: 100%;
-        height: 100%;
-        opacity: 0.7;
-        &:hover {
-            opacity: 1;
-        }
-    }
-}
-
 // our team
 
 .our_team {
@@ -155,9 +129,6 @@
     grid-template: 1fr / 1fr 1fr 1fr 1fr;
     gap: 32px;
 }
-
-// footer
-// imported
 
 // responsive 
 
@@ -177,7 +148,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .benefits_users {
+    .features_users {
         flex-direction: column;
     }
 }
@@ -218,10 +189,10 @@
     .feature {
         padding: 64px 0;
     }
-    .benefits_users {
+    .features_users {
         gap: 60px;
     }
-    .benefits_users_logos {
+    .features_users_logos {
         flex-wrap: wrap;
         gap: 25px;
     }

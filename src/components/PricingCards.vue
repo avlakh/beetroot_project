@@ -100,8 +100,8 @@ export default {
             default: ''
         },
         features_na: {
-            type: String,
-            default: ''
+            type: Boolean,
+            default: false
         }
     }
 }

@@ -1,5 +1,7 @@
 <template>
-    <HomeSectionVue/>
+    <template v-for="(item, i) in homeSectionArr">
+        <home-section :key="i" v-if="i === 0" :heading="item.heading" :paragraph="item.paragraph" :heroImg="item.heroImg" :heroImgAlt="item.heroImgAlt" :arrowBtnStatus="item.arrowBtnStatus" :roundBtnText="item.roundBtnText" :roundBtnLink="item.roundBtnLink"/>
+    </template>
     <section class="we_work">
         <div class="container">
             <div class="we_work_text">
@@ -172,7 +174,7 @@
 
 <script>
 
-import HomeSectionVue from '@/components/HomeSection.vue'
+import HomeSection from '@/components/HomeSection.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
 import BlogCards from '@/components/BlogCards.vue'
 import FaqsAccord from '@/components/FaqsAccord.vue'
@@ -181,14 +183,15 @@ import axios from 'axios'
 export default {
     name: 'HomeView',
     components: {
-        HomeSectionVue,
+        HomeSection,
         FeatureCards,
         BlogCards,
         FaqsAccord
     },
     data () {
         return {
-            featureCardsArr: []
+            featureCardsArr: [],
+            homeSectionArr: []
         }
     },
     created() {
@@ -196,6 +199,11 @@ export default {
             .get('../data/FeatureCards.json')
             .then (resp =>{
                 this.featureCardsArr = resp.data;
+            }),
+        axios
+            .get('../data/HomeSection.json')
+            .then (resp =>{
+                this.homeSectionArr = resp.data;
             })
     }
 }

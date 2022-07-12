@@ -3,16 +3,20 @@
             <div class="container">
                 <div class="hero_text">
                     <div class="hero_text_body">
-                        <h1>Building stellar websites for early startups</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <h1>{{heading}}</h1>
+                        <p>{{paragraph}}</p>
                     </div>
                     <div class="hero_btn">
-                        <router-link to="works" class="round_btn">View our work</router-link>
-                        <router-link to="pricing" class="arrow_btn">View Pricing</router-link>
+                        
+                        <router-link :to="roundBtnLink" class="round_btn">{{roundBtnText}}</router-link>
+                        <template v-if="arrowBtnStatus">
+                            <router-link to="pricing" class="arrow_btn">View Pricing</router-link>
+                        </template>
+                        
                     </div>
                 </div>
                 <div class="hero_img">
-                    <img src="@/assets/images/home/hero_sec_img.svg" alt="finsweet_hero_image">
+                    <img :src="require('@/assets/images/'+heroImg)" :alt="heroImgAlt">
                 </div>
             </div>
         </section>
@@ -20,19 +24,43 @@
 
 <script>
 export default {
-    name: 'HomeSection'
+    name: 'HomeSection',
+    props: {
+        heading: {
+            type: String,
+            default: ''
+        },
+        paragraph: {
+            type: String,
+            default: ''
+        },
+        heroImg: {
+            type: String,
+            default: ''
+        },
+        heroImgAlt: {
+            type: String,
+            default: ''
+        },
+        arrowBtnStatus: {
+            type: Boolean,
+            default: false
+        },
+        roundBtnText: {
+            type: String,
+            default: ''
+        },
+        roundBtnLink: {
+            type: String,
+            default: ''
+        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 
-    $royal-blue: #2405F2;
-    $dark-blue: #282938;
-    $grey: #F4F6FC;
-    $yellow: #FCD980;
-    $tint-blue: #1C1E53;
-    $accent: #EEF4FA;
-    $light-yellow: rgba(252, 217, 128, 0.1);
+   @import '@/assets/css/vars.scss';
 
     .hero_section {
     background-color: $tint-blue;

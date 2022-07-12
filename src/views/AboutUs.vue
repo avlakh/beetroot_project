@@ -64,19 +64,9 @@
                 <feature-cards :key="i" v-if="i === 8" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
             </template>
         </div>
-        <div class="benefits_users">
-            <div class="benefits_users_numbers">
-                <h3>100.000+</h3>
-                <h5>Finsweet Users</h5>
-            </div>
-            <div class="benefits_users_logos">
-                <a href="#"><img src="../assets/images/about_us/benefits_users/logo1.svg" alt="logo1"></a>
-                <a href="#"><img src="../assets/images/about_us/benefits_users/logo2.svg" alt="logo2"></a>
-                <a href="#"><img src="../assets/images/about_us/benefits_users/logo3.svg" alt="logo3"></a>
-                <a href="#"><img src="../assets/images/about_us/benefits_users/logo4.svg" alt="logo4"></a>
-                <a href="#"><img src="../assets/images/about_us/benefits_users/logo5.svg" alt="logo5"></a>
-            </div>
-        </div>
+        <template v-for="(item, i) in featurePartnersArr">
+            <feature-partners :key="i" v-if="i === 0" :partnersNums="item.partnersNums" :partnersDescr="item.partnersDescr" :partnersLogoOne="item.partnersLogoOne" :partnersLogoOneAlt="item.partnersLogoOneAlt" :partnersLogoTwo="item.partnersLogoTwo" :partnersLogoTwoAlt="item.partnersLogoTwoAlt" :partnersLogoThree="item.partnersLogoThree" :partnersLogoThreeAlt="item.partnersLogoThreeAlt" :partnersLogoFour="item.partnersLogoFour" :partnersLogoFourAlt="item.partnersLogoFourAlt" :partnersLogoFive="item.partnersLogoFive" :partnersLogoFiveAlt="item.partnersLogoFiveAlt"/>
+        </template>
     </section>
     <section class="our_team">
             <div class="container">
@@ -105,6 +95,7 @@ import axios from 'axios';
 import OurMission from '@/components/OurMission.vue';
 import OurMissionReverse from '@/components/OurMissionReverse.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
+import FeaturePartners from '@/components/FeaturePartners.vue';
 import TeamCards from '@/components/TeamCards.vue'
 
 export default {
@@ -113,13 +104,15 @@ export default {
     OurMission,
     OurMissionReverse,
     FeatureCards,
-    TeamCards
+    FeaturePartners,
+    TeamCards,
 },
     data () {
         return {
             ourMissionArr: [],
             featureCardsArr: [],
-            teamCardsArr: []
+            teamCardsArr: [],
+            featurePartnersArr: []
         }
     },
     created() {
@@ -137,6 +130,11 @@ export default {
             .get('../data/TeamCards.json')
             .then (resp => {
                 this.teamCardsArr = resp.data;
+            }),
+        axios
+            .get('../data/FeaturePartners.json')
+            .then (resp => {
+                this.featurePartnersArr = resp.data;
             })
     }
 
