@@ -10,26 +10,9 @@
                 <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
             </div>
             <div class="we_work_grid">
-                <div class="we_work_card">
-                    <img src="@/assets/images/home/how_we_work/pointer_1.svg" alt="we_work_pointer1">
-                    <h5>Strategy</h5>
-                    <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .</p>
-                </div>
-                <div class="we_work_card">
-                    <img src="@/assets/images/home/how_we_work/pointer_2.svg" alt="we_work_pointer2">
-                    <h5>Wireframing</h5>
-                    <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .</p>
-                </div>
-                <div class="we_work_card">
-                    <img src="@/assets/images/home/how_we_work/pointer_3.svg" alt="we_work_pointer3">
-                    <h5>Design</h5>
-                    <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .</p>
-                </div>
-                <div class="we_work_card">
-                    <img src="@/assets/images/home/how_we_work/pointer_4.svg" alt="we_work_pointer4">
-                    <h5>Development</h5>
-                    <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .</p>
-                </div>
+                <template v-for="(item, i) in weWorkCardArr" :key="i" >
+                    <we-work :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :paragraph="item.paragraph"/>
+                </template>
             </div>
         </div>
     </section>
@@ -175,6 +158,7 @@
 <script>
 
 import HomeSection from '@/components/HomeSection.vue'
+import WeWork from '@/components/WeWork.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
 import BlogCards from '@/components/BlogCards.vue'
 import FaqsAccord from '@/components/FaqsAccord.vue'
@@ -184,12 +168,14 @@ export default {
     name: 'HomeView',
     components: {
         HomeSection,
+        WeWork,
         FeatureCards,
         BlogCards,
         FaqsAccord
     },
     data () {
         return {
+            weWorkCardArr: [],
             featureCardsArr: [],
             homeSectionArr: []
         }
@@ -204,6 +190,11 @@ export default {
             .get('../data/HomeSection.json')
             .then (resp =>{
                 this.homeSectionArr = resp.data;
+            })
+        axios 
+            .get('../data/WeWork.json')
+            .then (resp=>{
+                this.weWorkCardArr = resp.data
             })
     }
 }
