@@ -24,7 +24,7 @@ export default {
             item: {}
         }
     }, created(){
-        let url = `https://newsapi.org/v2/everything?q=${this.$route.params.title}&searchIn=title&apiKey=06f27bccb97648139df586bc156b1b94`;
+        let url = `https://newsapi.org/v2/everything?q=${this.$route.params.title}&searchIn=title&apiKey=8de73a80555649889b993ecdb6eb1844`;
         axios 
             .get(url)
             .then(resp=>{

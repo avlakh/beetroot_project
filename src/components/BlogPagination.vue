@@ -128,6 +128,11 @@ export default {
     list-style: none
 }
 
+.pagination-wrap {
+    display: flex;
+    justify-content: center;
+}
+
 .page-link {
     position: relative;
     display: block;

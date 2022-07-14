@@ -63,7 +63,7 @@ export default {
     },
     methods: {
         fetchData(){
-            let url = 'https://newsapi.org/v2/everything?q=design&apiKey=06f27bccb97648139df586bc156b1b94';
+            let url = 'https://newsapi.org/v2/everything?q=design&apiKey=8de73a80555649889b993ecdb6eb1844';
             url += '&from='+this.dateFormatted
             url += '&to='+this.dateFormatted
             url += '&language=en'
@@ -73,7 +73,8 @@ export default {
                 .get(url)
                 .then(resp=>{
                     this.list = resp.data.articles;
-                    this.total = Math.ceil(resp.data.totalResults / 18)
+                    // this.total = Math.ceil(resp.data.totalResults / 18)
+                    this.total = 4;
                 })
         },
         goToPage(new_page) {
