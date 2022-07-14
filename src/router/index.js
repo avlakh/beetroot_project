@@ -32,6 +32,11 @@ const routes = [
     component: () => import('@/views/BlogView.vue')
   },
   {
+    path: '/blog/:title',
+    name: 'blog-page',
+    component: () => import('@/views/BlogPage.vue')
+  },
+  {
     path: '/privacy-policy',
     name: 'privacy-policy',
     component: () => import ('@/views/PrivacyPolicy.vue')

@@ -163,6 +163,25 @@ h6 {
     }
 }
 
+.round_btn {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    background-color: #FCD980;
+    border-radius: 41px;
+    padding: 16px 56px;
+    font-family: 'Manrope';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #1B1C2B;
+    margin-bottom: 64px;
+    &:hover {
+        background-color: #FDE4A6;
+    }
+}
+
 // footer
 // imported
 
