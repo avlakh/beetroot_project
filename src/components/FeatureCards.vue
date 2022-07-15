@@ -1,7 +1,7 @@
 <template>
     <div class="features_card">
         <img :src="require('@/assets/images/'+img)" :alt="imgAlt">
-        <h6>{{ heading }}</h6>
+        <h6>{{heading}}</h6>
         <p>{{paragraph}}</p>
     </div>
 </template>
