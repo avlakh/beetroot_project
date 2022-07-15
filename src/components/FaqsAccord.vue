@@ -6,28 +6,48 @@
                         <h3>Frequently asked questions</h3>
                         <router-link to="contact">Contact us for more info</router-link>
                     </div>
-                    <ul class="faqs_accord">
-                        <h4 class="faqs_heading"><span class="faqs_number">01</span>How much time does it take?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">02</span>What is your class naming convention?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">03</span>How do you communicate?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">04</span>I have a bigger project. Can you handle it?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <h4 class="faqs_heading"><span class="faqs_number">05</span>What is your class naming convention?</h4>
-                        <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </ul>
+                    <vue-collapsible-panel-group accordion base-color="#ffffff">
+                        <vue-collapsible-panel>
+                            <template #title>
+                                <h4 class="faqs_heading"><span class="faqs_number">01</span>How much time does it take?</h4>
+                            </template>
+                            <template #content>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </template>
+                        </vue-collapsible-panel>
+                        <vue-collapsible-panel :expanded="false">
+                            <template #title>
+                                <h4 class="faqs_heading"><span class="faqs_number">02</span>What is your class naming convention?</h4>
+                            </template>
+                            <template #content>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </template>
+                        </vue-collapsible-panel>
+                        <vue-collapsible-panel :expanded="false">
+                            <template #title>
+                                <h4 class="faqs_heading"><span class="faqs_number">03</span>How do you communicate?</h4>
+                            </template>
+                            <template #content>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </template>
+                        </vue-collapsible-panel>
+                        <vue-collapsible-panel :expanded="false">
+                            <template #title>
+                                <h4 class="faqs_heading"><span class="faqs_number">04</span>I have a bigger project. Can you handle it?</h4>
+                            </template>
+                            <template #content>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </template>
+                        </vue-collapsible-panel>
+                        <vue-collapsible-panel :expanded="false">
+                            <template #title>
+                                <h4 class="faqs_heading"><span class="faqs_number">05</span>What is your class naming convention?</h4>
+                            </template>
+                            <template #content>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </template>
+                        </vue-collapsible-panel>
+                    </vue-collapsible-panel-group>
                 </div>
             </div>
         </section>
@@ -36,6 +56,10 @@
 <style lang="scss" scoped>
 
 @import '@/assets/css/vars.scss';
+
+.vcp {
+    margin-bottom: 10px;
+}
 
 .faqs {
 padding: 128px 0;
@@ -69,27 +93,25 @@ padding: 128px 0;
     margin-right: 56px;
 }
 
-.faqs_accord {
-    .faqs_heading {
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 36px;
-        color: $dark-blue;
-    }
-    .faqs_number {
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 36px;
-        color: $royal-blue;
-    }
-    p {
-        padding-left: 63px;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 32px;
-        color: $dark-blue;
-        opacity: 0.8;
-    }
+.faqs_heading {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $dark-blue;
+}
+.faqs_number {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $royal-blue;
+}
+p {
+    padding-left: 82px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    color: $dark-blue;
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 1000px) {
@@ -105,6 +127,7 @@ padding: 128px 0;
 </style>
 
 <script>
+import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
 export default {
     name: 'FaqsAccord'
 }

@@ -140,11 +140,13 @@
                 <div class="form_input_wrap">
                     <h5>Send inquiry</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                    <form action="#" enctype="multipart/form-data" method="post" class="form_flex"> 
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="text" placeholder="Paste your comment" required>
-                        <button type="submit" class="round_btn">Send an Inquiry</button>
+                    <form id="home_form">
+                        <div class="form_flex">
+                            <input type="text" placeholder="Your Name">
+                            <input type="email" placeholder="Email">
+                            <input type="text" placeholder="Paste your comment">
+                            <button type="submit" class="round_btn">Send an Inquiry</button>
+                        </div>
                     </form>
                     <div class="arrow_wrap">
                         <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
