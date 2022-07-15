@@ -9,7 +9,7 @@
                     <vue-collapsible-panel-group accordion base-color="#ffffff">
                         <vue-collapsible-panel>
                             <template #title>
-                                <h4 class="faqs_heading"><span class="faqs_number">01</span>How much time does it take?</h4>
+                                <h4 class="faqs_heading"><span class="faqs_number">01</span><span>How much time does it take?</span></h4>
                             </template>
                             <template #content>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -17,7 +17,7 @@
                         </vue-collapsible-panel>
                         <vue-collapsible-panel :expanded="false">
                             <template #title>
-                                <h4 class="faqs_heading"><span class="faqs_number">02</span>What is your class naming convention?</h4>
+                                <h4 class="faqs_heading"><span class="faqs_number">02</span><span>What is your class naming convention?</span></h4>
                             </template>
                             <template #content>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -25,7 +25,7 @@
                         </vue-collapsible-panel>
                         <vue-collapsible-panel :expanded="false">
                             <template #title>
-                                <h4 class="faqs_heading"><span class="faqs_number">03</span>How do you communicate?</h4>
+                                <h4 class="faqs_heading"><span class="faqs_number">03</span><span>How do you communicate?</span></h4>
                             </template>
                             <template #content>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -33,7 +33,7 @@
                         </vue-collapsible-panel>
                         <vue-collapsible-panel :expanded="false">
                             <template #title>
-                                <h4 class="faqs_heading"><span class="faqs_number">04</span>I have a bigger project. Can you handle it?</h4>
+                                <h4 class="faqs_heading"><span class="faqs_number">04</span><span>I have a bigger project. Can you handle it?</span></h4>
                             </template>
                             <template #content>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -41,7 +41,7 @@
                         </vue-collapsible-panel>
                         <vue-collapsible-panel :expanded="false">
                             <template #title>
-                                <h4 class="faqs_heading"><span class="faqs_number">05</span>What is your class naming convention?</h4>
+                                <h4 class="faqs_heading"><span class="faqs_number">05</span><span>What is your class naming convention?</span></h4>
                             </template>
                             <template #content>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -114,13 +114,25 @@ p {
     opacity: 0.8;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .faqs {
         padding: 60px 0;
     }
     .faqs_flex {
         flex-wrap: wrap;
         gap: 45px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .vcp {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .vcp {
+        margin-bottom: 55px;
     }
 }
 

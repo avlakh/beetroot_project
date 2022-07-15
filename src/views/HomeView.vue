@@ -83,78 +83,59 @@
         </div>
     </section>
     <section class="clients">
-            <div class="container">
-                <div class="clients_flex">
-                    <div class="clients_flex_descr">
-                        <h3>What our clients say about us</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</p>
-                    </div>
-                    <div class="clients_flex_slider">
-                        <div class="slide">
-                            <h5 class="clients_quote">"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."</h5>
+        <div class="container">
+            <div class="clients_flex">
+                <div class="clients_flex_descr">
+                    <h3>What our clients say about us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</p>
+                </div>
+                <div class="clients_flex_slider">
+                    <carousel :settings="sliderSettings">
+                        <slide v-for="(item, i) in homeSliderArr" :key="i">
+                            <h5 class="clients_quote">{{item.quote}}</h5>
                             <div class="slide_author">
                                 <div class="slide_img">
-                                    <img src="@/assets/images/home/clients/slider_image.png" alt="jenny_wilson">
+                                    <img :src="require('@/assets/images/home/'+item.img)" :alt="item.imgAlt">
                                 </div>
                                 <div class="slide_author_descr">
-                                    <h5>Jenny Wilson</h5>
-                                    <h6>Vice President</h6>
+                                    <h5>{{item.authorName}}</h5>
+                                    <h6>{{item.authorPosition}}</h6>
                                 </div>
                             </div>
-                        </div>
-                        <!-- <div class="slide">
-                            <h5 class="clients_quote">"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."</h5>
-                            <div class="slide_author">
-                                <div class="slide_img">
-                                    <img src="assets/images/home/clients/slider_image.png" alt="jenny_wilson">
-                                </div>
-                                <div class="slide_author_descr">
-                                    <h5>Jenny Wilson</h5>
-                                    <h6>Vice President</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <h5 class="clients_quote">"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."</h5>
-                            <div class="slide_author">
-                                <div class="slide_img">
-                                    <img src="assets/images/home/clients/slider_image.png" alt="jenny_wilson">
-                                </div>
-                                <div class="slide_author_descr">
-                                    <h5>Jenny Wilson</h5>
-                                    <h6>Vice President</h6>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+                        </slide>
+                        <template #addons>
+                            <navigation />
+                        </template>
+                    </carousel>
                 </div>
             </div>
-        </section>
-        <faqs-accord/>
-        <section class="contact container">
-            <div class="form_bg" :style="{'background-image':'url(require(@/assets/images/home/contact/form_bg.jpg))'}">
-                <h2>Building stellar websites for early startups</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
-            </div>
-            <div class="form_input">
-                <div class="form_input_wrap">
-                    <h5>Send inquiry</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                    <form id="home_form">
-                        <div class="form_flex">
-                            <input type="text" placeholder="Your Name">
-                            <input type="email" placeholder="Email">
-                            <input type="text" placeholder="Paste your comment">
-                            <button type="submit" class="round_btn">Send an Inquiry</button>
-                        </div>
-                    </form>
-                    <div class="arrow_wrap">
-                        <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
+        </div>
+    </section>
+    <faqs-accord/>
+    <section class="contact container">
+        <div class="form_bg" :style="{'background-image':'url(require(@/assets/images/home/contact/form_bg.jpg))'}">
+            <h2>Building stellar websites for early startups</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+        </div>
+        <div class="form_input">
+            <div class="form_input_wrap">
+                <h5>Send inquiry</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <form id="home_form">
+                    <div class="form_flex">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="Paste your comment">
+                        <button type="submit" class="round_btn">Send an Inquiry</button>
                     </div>
+                </form>
+                <div class="arrow_wrap">
+                    <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
                 </div>
             </div>
-        </section>
-        <blog-cards/>
+        </div>
+    </section>
+    <blog-cards/>
 </template>
 
 <script>
@@ -164,6 +145,8 @@ import WeWork from '@/components/WeWork.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
 import BlogCards from '@/components/BlogCards.vue'
 import FaqsAccord from '@/components/FaqsAccord.vue'
+import 'vue3-carousel/dist/carousel.css';
+import {Carousel, Navigation, Slide} from 'vue3-carousel';
 import axios from 'axios'
 
 export default {
@@ -173,13 +156,22 @@ export default {
         WeWork,
         FeatureCards,
         BlogCards,
-        FaqsAccord
+        FaqsAccord,
+        Carousel,
+        Navigation,
+        Slide
     },
     data () {
         return {
             weWorkCardArr: [],
             featureCardsArr: [],
-            homeSectionArr: []
+            homeSectionArr: [],
+            homeSliderArr: [],
+            sliderSettings: {
+                itemsToShow: 1,
+                autoplay: 3000,
+                wrapAround: true
+            }
         }
     },
     created() {
@@ -198,9 +190,42 @@ export default {
             .then (resp=>{
                 this.weWorkCardArr = resp.data
             })
+        axios
+            .get('../data/HomeSlider.json')
+            .then(resp=>{
+                this.homeSliderArr = resp.data;
+            })
     }
 }
 </script>
 <style lang="scss" scoped>
-    @import '@/assets/css/pages/index.scss'
+    @import '@/assets/css/pages/index.scss';
+</style>
+<style lang="scss">
+.carousel__prev {
+    position: absolute;
+    z-index: 10;
+    height: 48px;
+    width: 48px;
+    top: auto;
+    left: auto;
+    bottom: -28px;
+    right: 20px;
+}
+.carousel__next {
+    position: absolute;
+    z-index: 10;
+    height: 48px;
+    width: 48px;
+    top: auto;
+    left: auto;
+    bottom: -28px;
+    right: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .carousel__prev, .carousel__next {
+        display: none;
+    }
+}
 </style>
