@@ -45,6 +45,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: () => import ('@/views/ContactView.vue')
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: 'Page not found',
+    component: () => import ('@/views/PageView404.vue')
   }
   
 ]
