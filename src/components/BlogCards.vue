@@ -1,33 +1,17 @@
 <template>
     <section class="our_blog">
             <div class="container">
-                <h2>Our blog</h2>
+                <router-link to="/blog" class="heading_link">Our blog</router-link>
                 <div class="blog_card_wrap">
-                    <div class="blog_card">
-                        <div class="blog_card_img">
-                            <img src="@/assets/images/home/blog/blog_card_1.jpg" alt="arab_businessman">
-                        </div>
-                        <h6>19 Jan 2022</h6>
-                        <h5>How one Webflow user grew his single person consultancy from $0-100K in 14 months</h5>
-                        <p>See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract</p>
-                        <router-link to="#" class="arrow_btn">Read More</router-link>
-                    </div>
-                    <div class="blog_card">
-                        <div class="blog_card_img">
-                            <img src="@/assets/images/home/blog/blog_card_2.jpg" alt="arab_businessman">
-                        </div>
-                        <h6>19 Jan 2022</h6>
-                        <h5>How one Webflow user grew his single person consultancy from $0-100K in 14 months</h5>
-                        <p>See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract</p>
-                        <router-link to="#" class="arrow_btn">Read More</router-link>
-                    </div>
-                    <div class="blog_card">
-                        <div class="blog_card_img">
-                            <img src="@/assets/images/home/blog/blog_card_3.jpg" alt="arab_businessman">
-                        </div>
-                        <h6>19 Jan 2022</h6>
-                        <h5>How one Webflow user grew his single person consultancy from $0-100K in 14 months</h5>
-                        <p>See how pivoting to Webflow changed one person’s sales strategy and allowed him to attract</p>
+                    <div v-for="(item, index) in list" :key="index" class="blog_card">
+                        <router-link :to="{name: 'blog-page', params:{title: item.title}}">
+                            <div class="blog_card_img">
+                                <img :src="item.urlToImage" :alt="item.title">
+                            </div>
+                            <h6>{{item.publishedAt}}</h6>
+                            <h5>{{item.title}}</h5>
+                            <p v-html="item.description"/>
+                        </router-link>
                         <router-link to="#" class="arrow_btn">Read More</router-link>
                     </div>
                 </div>
@@ -36,8 +20,27 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    name: 'BlogCards'
+    name: 'BlogCards',
+    data (){
+        return {
+            list: [],
+        }
+    },
+    created() {
+        let url = 'https://newsapi.org/v2/everything?q=design&apiKey=8de73a80555649889b993ecdb6eb1844';
+            url += '&from='+this.dateFormatted
+            url += '&to='+this.dateFormatted
+            url += '&language=en'
+            url += '&pageSize=3'
+            url += '&page='+this.page  
+            axios
+                .get(url)
+                .then(resp=>{
+                    this.list = resp.data.articles;
+                })
+    }
 }
 </script>
 
@@ -47,8 +50,15 @@ export default {
 
     .our_blog {
     margin-bottom: 128px;
-    h2 {
+    .heading_link {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 64px;
         margin-bottom: 64px;
+        &:hover {
+            color: $royal-blue;
+        }
     }
 }
 
@@ -59,11 +69,16 @@ export default {
 
 .blog_card {
     .blog_card_img {
-        margin-bottom: 40px;
+        position: relative;
+        padding-top: 53%;
+        margin-bottom: 24px;
         img {
             width: 100%;
             height: 100%;
-            vertical-align: top;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     }
     h6 {

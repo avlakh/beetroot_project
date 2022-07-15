@@ -23,7 +23,7 @@
                     </div>
                     <h6>{{item.publishedAt}}</h6>
                     <h5>{{item.title}}</h5>
-                    <p>{{item.description}}</p>
+                    <p v-html="item.description"/>
                     <router-link :to="{name: 'blog-page', params:{title: item.title}}" class="arrow_btn">Read More</router-link>
                     </router-link>
                 </div>
