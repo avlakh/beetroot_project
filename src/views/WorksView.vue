@@ -17,14 +17,12 @@
     <section class="templates container">
         <div class="templates_list_flex">
             <ul class="templates_list">
-                <li><a href="#" class="active">All</a></li>
-                <li><a href="#">UI Design</a></li>
-                <li><a href="#">Webflow Design</a></li>
-                <li><a href="#">Figma Design</a></li>
+                <li><a @click="setType('')">All</a></li>
+                <li v-for="t in typesList" :key="t"><a @click="setType(t)">{{ t }} Design</a></li>
             </ul>
         </div>
         <div class="templates_grid">
-            <template v-for="(item, i) in worksCardArr" :key="i">
+            <template v-for="(item, i) in cardList()" :key="i">
                 <works-card :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
             </template>
         </div>
@@ -48,7 +46,10 @@ export default {
     },
     data (){
         return {
-            worksCardArr: []
+            worksCardArr: [],
+            type: '',
+            typesList: [],
+            isClassActive: false
         }
     },
     created(){
@@ -56,7 +57,31 @@ export default {
             .get('../data/WorksCard.json')
             .then(resp=>{
                 this.worksCardArr = resp.data;
+                this.getTypesList();
             })
+    }, methods: {
+        cardList(){
+            let arr = [];
+            if (this.type !== ''){
+                arr = this.worksCardArr.filter(el=>el.type === this.type)
+                
+            } else {
+                arr = this.worksCardArr;
+            }
+            return arr
+        },
+        getTypesList(){
+            let arr = [];
+            this.worksCardArr.forEach(el=>{
+                if (arr.indexOf(el.type) === -1){
+                    arr.push(el.type)
+                }
+            })
+            this.typesList = arr;
+        },
+        setType(type){
+            this.type = type;
+        }
     }
 }
 </script>

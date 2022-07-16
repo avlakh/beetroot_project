@@ -5,7 +5,7 @@
         </div>
         <h3>{{heading}}</h3>
         <p>{{descr}}</p>
-        <a href="#" class="arrow_btn">View Portfolio</a>
+        <router-link to="/" class="arrow_btn">View Portfolio</router-link>
     </div>
 </template>
 
@@ -26,6 +26,10 @@ export default {
             default: ''
         },
         imgAlt: {
+            type: String,
+            default: ''
+        },
+        link: {
             type: String,
             default: ''
         }
