@@ -1,32 +1,38 @@
 <template>
-    <!-- <section class="blog_home container">
-        <div class="blog_home_main_text">
-            <h2>A UX Case Study on Creating a Studious Environment for Students</h2>
-            <p><span class="blog_home_author_name">Andrew Jonson</span><span>Posted on 27th January 2021</span></p>
-        </div>
-        <div class="blog_home_img">
-            <img src="../assets/images/blogs/blog_home.jpg" alt="blog_home">
-        </div>
-        <div class="blog_home_descr">
-            <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
-            <a href="#">Read more</a>
-        </div>
-    </section> -->
+    <section class="blog_home container">
+        <template v-for="(item, index) in list" :key="index">
+            <template v-if="index === 0">
+                <div class="blog_home_main_text">
+                    <h2>{{item.title}}</h2>
+                    <p><span class="blog_home_author_name">{{item.author}}</span><span>{{item.publishedAt}}</span></p>
+                </div>
+                <div class="blog_home_img">
+                    <img :src="item.urlToImage" :alt="item.title">
+                </div>
+                <div class="blog_home_descr">
+                    <p v-html="item.description"/>
+                    <router-link :to="{name: 'blog-page', params:{title: item.title}}">Read More</router-link>
+                </div>
+            </template>
+        </template>
+    </section>
     <section class="our_blog">
         <div class="container">
             <h2>Our Blog</h2>
             <div class="blog_card_wrap">
-                <div v-for="(item, index) in list" :key="index" class="blog_card">
-                    <router-link :to="{name: 'blog-page', params:{title: item.title}}">
-                    <div class="blog_card_img">
-                        <img :src="item.urlToImage" :alt="item.title">
+                <template v-for="(item, index) in list" :key="index">
+                    <div class="blog_card" v-if="index > 0">
+                        <router-link :to="{name: 'blog-page', params:{title: item.title}}">
+                        <div class="blog_card_img">
+                            <img :src="item.urlToImage" :alt="item.title">
+                        </div>
+                        <h6>{{item.publishedAt}}</h6>
+                        <h5>{{item.title}}</h5>
+                        <p v-html="item.description"/>
+                        <router-link :to="{name: 'blog-page', params:{title: item.title}}" class="arrow_btn">Read More</router-link>
+                        </router-link>
                     </div>
-                    <h6>{{item.publishedAt}}</h6>
-                    <h5>{{item.title}}</h5>
-                    <p v-html="item.description"/>
-                    <router-link :to="{name: 'blog-page', params:{title: item.title}}" class="arrow_btn">Read More</router-link>
-                    </router-link>
-                </div>
+                </template>
             </div>
         </div>
         <blog-pagination @goToPage="goToPage" :total="total" :page="page"/>
@@ -67,7 +73,7 @@ export default {
             url += '&from='+this.dateFormatted
             url += '&to='+this.dateFormatted
             url += '&language=en'
-            url += '&pageSize=18'
+            url += '&pageSize=19'
             url += '&page='+this.page  
             axios
                 .get(url)
