@@ -8,38 +8,8 @@
 
 // who we are
 
-.who_we_are {
+.who_we_are .container {
     background-color: #F4F5F5;
-    h4 {
-        padding: 75px 0 0 80px;
-        font-size: 16px;
-        line-height: 28px;
-        color: $dark-blue;
-    }
-}
-
-.who_we_are_flex {
-    display: flex;
-    gap: 33px;
-    padding: 0 80px 80px 80px;
-}
-
-.who_we_are_descr h3 {
-    margin-bottom: 15px;
-}
-
-.who_we_are_descr p {
-    color: $dark-blue;
-}
-
-.who_we_are_img {
-    height: 100%;
-    width: 100%;
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
 }
 
 // our process
@@ -176,9 +146,6 @@
     .about_us_home_flex {
         flex-wrap: wrap;
     }
-    .who_we_are_flex {
-        flex-wrap: wrap;
-    };
     .our_process {
         padding: 64px 0;
     }
@@ -222,16 +189,5 @@
 @media screen and (max-width: 700px) {
     .our_team_grid {
         grid-template: 1fr 1fr 1fr / 1fr;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .who_we_are h4 {
-        padding: 20px 0;
-        text-align: center;
-    }
-    .who_we_are_flex {
-        padding: 20px 20px;
-        text-align: center;
     }
 }

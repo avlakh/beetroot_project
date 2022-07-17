@@ -97,17 +97,16 @@
     font-size: 16px;
     line-height: 28px;
     color: $dark-blue;
-}
-
-.footer_bottom_copy:hover {
-    animation: bounce 1.5s infinite;
+    &:hover {
+        color: $royal-blue;
+    }
 }
 
 .footer_bottom_menu {
     display: flex;
     gap: 32px;
     li:hover {
-        animation: bounce 1.5s infinite;
+        color: $royal-blue;
     }
 }
 

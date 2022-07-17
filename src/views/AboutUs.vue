@@ -4,20 +4,11 @@
             <our-mission :key="i" v-if="i === 0" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
         </template>
     </section>
-    <section class="who_we_are container">
-        <h4>Who we are</h4>
-        <div class="who_we_are_flex">
-            <div class="who_we_are_descr">
-                <h3>Goal focused</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div class="who_we_are_descr">
-                <h3>Continuous improvement</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>    
-        </div>
-        <div class="who_we_are_img">
-            <img src="@/assets/images/about_us/who_we_are_guy_with_the_board.jpg" alt="guy_showing_the_board">
+    <section class="who_we_are">
+        <div class="container">
+            <template v-for="(item, index) in whoWeAreArr" :key="index">
+                <who-we-are :headingOne="item.headingOne" :paragraphOne="item.paragraphOne" :headingSm="item.headingSm" :headingTwo="item.headingTwo" :paragraphTwo="item.paragraphTwo" :img="item.img" :imgAlt="item.imgAlt"/>
+            </template>
         </div>
     </section>
     <section class="our_process container">
@@ -92,6 +83,7 @@
 <script>
 
 import axios from 'axios';
+import WhoWeAre from '@/components/WhoWeAre.vue';
 import OurMission from '@/components/OurMission.vue';
 import OurMissionReverse from '@/components/OurMissionReverse.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
@@ -101,18 +93,20 @@ import TeamCards from '@/components/TeamCards.vue'
 export default {
     name: 'AboutUs',
     components: {
-    OurMission,
-    OurMissionReverse,
-    FeatureCards,
-    FeaturePartners,
-    TeamCards,
+        WhoWeAre,
+        OurMission,
+        OurMissionReverse,
+        FeatureCards,
+        FeaturePartners,
+        TeamCards,
 },
     data () {
         return {
             ourMissionArr: [],
             featureCardsArr: [],
             teamCardsArr: [],
-            featurePartnersArr: []
+            featurePartnersArr: [],
+            whoWeAreArr: []
         }
     },
     created() {
@@ -135,6 +129,11 @@ export default {
             .get('../data/FeaturePartners.json')
             .then (resp => {
                 this.featurePartnersArr = resp.data;
+            }),
+        axios
+            .get('../data/WhoWeAre.json')
+            .then (resp => {
+                this.whoWeAreArr = resp.data;
             })
     }
 
