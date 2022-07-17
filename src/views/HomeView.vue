@@ -101,28 +101,58 @@
         </div>
     </section>
     <faqs-accord/>
-    <section class="contact container">
-        <div class="form_bg" :style="{'background-image':'url(require(@/assets/images/home/contact/form_bg.jpg))'}">
-            <h2>Building stellar websites for early startups</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
-        </div>
-        <div class="form_input">
-            <div class="form_input_wrap">
-                <h5>Send inquiry</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                <form id="home_form">
-                    <div class="form_flex">
-                        <input type="text" placeholder="Your Name">
-                        <input type="email" placeholder="Email">
-                        <input type="text" placeholder="Paste your comment">
-                        <button type="submit" class="round_btn">Send an Inquiry</button>
+    <section class="contact">
+        <div class="container">
+            <div class="form_bg">
+                <h2>Building stellar websites for early startups</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+            </div>
+            <div class="form_input">
+                <div class="form_input_wrap">
+                    <h5>Send inquiry</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <template>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                            </symbol>
+                            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </symbol>
+                        </svg>
+                    </template>
+                    <form id="home_form" @submit.prevent="checkAndSend">
+                        <div v-if="answer.success" class="alert_success">
+                            <svg width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
+                            <div>{{answer.text}}</div>
+                        </div>
+                        <div v-if="answer.success === false" class="alert_danger">
+                            <svg width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>{{answer.text}}</div>
+                        </div>
+                        <div class="form_flex">
+                            <div class="form_name">
+                                <input type="text" placeholder="Your Name" :class="{'error_input' : errors.name !== ''}" @focus="resetError('name')" v-model.trim="name">
+                                <div class="form_error_text">{{errors.name}}</div>
+                            </div>
+                            <div class="form_email">
+                                <input type="text" placeholder="Email" :class="{'error_input' : errors.email !== ''}" @focus="resetError('email')" v-model.trim="email">
+                                <div class="form_error_text">{{errors.email}}</div>
+                            </div>
+                            <div class="form_message">
+                                <input type="text" :class="{'error_input' : errors.message !== ''}" placeholder="Paste your comment" @focus="resetError('message')" v-model.trim="message">
+                                <div class="form_error_text">{{errors.message}}</div>
+                            </div>
+                            <button type="submit" class="round_btn">Send an Inquiry</button>
+                        </div>
+                    </form>
+                    <div class="arrow_wrap">
+                        <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
                     </div>
-                </form>
-                <div class="arrow_wrap">
-                    <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
                 </div>
             </div>
         </div>
+        
     </section>
     <blog-cards/>
 </template>
@@ -153,7 +183,6 @@ export default {
     Carousel,
     Navigation,
     Slide,
-    
 },
     data () {
         return {
@@ -166,6 +195,20 @@ export default {
                 itemsToShow: 1,
                 autoplay: 3000,
                 wrapAround: true
+            },
+            API_BOT_ID: '5418916099:AAGDMXUx4XQRdK6ai4-m7Xco_1Q1wVDjT60',
+            CHAT_ID: '-1001385692547',
+            name: '',
+            email: '',
+            message: '',
+            errors: {
+                name: '',
+                email: '',
+                message: '',
+            },
+            answer: {
+                success: null,
+                text: ''
             }
         }
     },
@@ -195,7 +238,71 @@ export default {
             .then(resp=>{
                 this.ourProjectsArr = resp.data;
             })
-    }
+    }, 
+    methods: {
+        checkAndSend(){
+            let valid = true;
+            if (this.name === ''){
+                this.errors.name = 'Enter your name';
+                valid = false;
+            }
+            if (this.name.length === 1){
+                this.errors.name = 'Minimal length is 2 characters';
+                valid = false;
+            }
+            if (this.email === ''){
+                this.errors.email = 'Enter your email';
+                valid = false;
+            } else {
+                if (this.isValidEmail(this.email) === false){
+                    this.errors.email = 'Enter valid email address';
+                    valid = false;
+                }
+            }
+            if (this.message === ''){
+                this.errors.message = 'Enter your message';
+                valid = false;
+            }
+            if(valid){
+                const message_text = '<i>Messages from main contact form</i>'+
+                '%0a<b>Name: </b>'+this.name + 
+                '%0a<b>Email: </b>'+this.email + 
+                '%0a<b>Message: </b>'+this.message;
+                let url = `https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=${message_text}&parse_mode=HTML`;
+                axios 
+                    .get(url)
+                    .then(resp=>{
+                    return resp.data
+                    })
+                    .then(resp=>{
+                        if (resp.ok){
+                            this.answer.success = true
+                            this.answer.text = 'Message successfully sent'
+                            this.name = this.email = this.message = ''
+
+                        } else {
+                            this.answer.success = false
+                            this.answer.text = 'Some error occurs. Please try again later'
+                        }
+                        setTimeout(()=>{
+                            this.answer.success = null
+                            this.answer.text = ''
+                        }, 3000)
+                    })
+                    .catch(()=>{
+                        this.answer.success = false
+                        this.answer.text = 'AJAX error. Please try again later'
+                    })}
+            },
+            resetError(fld){
+            this.errors[fld] = '';
+            },
+            isValidEmail(email){
+                return Boolean(email.match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                ))
+            }
+        }
 }
 </script>
 <style lang="scss" scoped>

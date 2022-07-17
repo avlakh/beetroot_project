@@ -201,7 +201,7 @@
 
 // contact form
 
-.contact {
+.contact .container {
     display: flex;
     margin-bottom: 128px;
 }
@@ -246,6 +246,31 @@
     }
 }
 
+#home_form {
+    .alert_success {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #badbcc;
+        color: #000;
+        border-radius: 12px;
+        padding: 10px;
+        width: 70%;
+        margin: 0 auto 25px;
+    }
+    .alert_danger {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #f8d7da;
+        color: #000;
+        border-radius: 12px;
+        padding: 10px;
+        width: 70%;
+        margin: 0 auto 25px;
+    }
+}
+
 .form_flex {
     display: flex;
     flex-direction: column;
@@ -254,6 +279,7 @@
     input {
         padding: 18px 0 18px 32px;
         background-color: transparent;
+        width: 100%;
         outline: none;
         font-family: 'Poppins';
         border: 2px solid rgba(255, 255, 255, 0.05);
@@ -265,6 +291,14 @@
             border-color: white;
             color: white;
         }
+    }
+    .error_input {
+        border: 1px solid red;
+    }
+    .form_error_text {
+        height: 28px;
+        padding-left: 25px;
+        color: red;
     }
     .round_btn {
         display: block;
@@ -282,6 +316,7 @@
         }
     }
 }
+
 
 .arrow_wrap {
     display: flex;
