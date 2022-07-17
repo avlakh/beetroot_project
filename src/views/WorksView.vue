@@ -17,8 +17,8 @@
     <section class="templates container">
         <div class="templates_list_flex">
             <ul class="templates_list">
-                <li><a @click="setType('')">All</a></li>
-                <li v-for="t in typesList" :key="t"><a @click="setType(t)">{{ t }} Design</a></li>
+                <li><a @click="setType('')" :class="{'active' : isClassActive}">All</a></li>
+                <li v-for="t in typesList" :key="t"><a @click="setType(t)" :class="{'active' : isClassActive}">{{t}} Design</a></li>
             </ul>
         </div>
         <div class="templates_grid">
@@ -49,7 +49,7 @@ export default {
             worksCardArr: [],
             type: '',
             typesList: [],
-            isClassActive: false
+            isClassActive: null
         }
     },
     created(){
@@ -59,7 +59,8 @@ export default {
                 this.worksCardArr = resp.data;
                 this.getTypesList();
             })
-    }, methods: {
+    }, 
+    methods: {
         cardList(){
             let arr = [];
             if (this.type !== ''){
