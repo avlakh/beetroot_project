@@ -49,7 +49,7 @@
     gap: 43px 37px;
 }
 
-// our projects
+// our projects 
 
 .our_projects .container {
     padding: 128px 0;
@@ -71,7 +71,7 @@
 
 .our_projects_grid {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 32%;
     gap: 23px;
     overflow: hidden;
     .arrow_btn {
@@ -97,89 +97,19 @@
 
 .our_projects_big_card {
     position: relative;
-    .big_card_img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        img {
-            width: 100%;
-        }
-    }
-    .big_card_overlay {
-        position: absolute;
-        height: 99%;
-        width: 47%;
-        top: 0;
-        left: -47%;
-        opacity: 0;
-        padding-left: 48px;
-        background: linear-gradient(329.39deg, #1C1E53 -10.96%, rgba(28, 30, 83, 0.42) 103.96%);
-        padding-top: 312px;
-        transition: all .4s ease;
-        h6 {
-            font-weight: 600;
-            color: white;
-            margin-bottom: 16px;
-        }
-        p {
-            font-weight: 500;
-            line-height: 28px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-        }
-    }
-}
-
-.our_projects_big_card:hover .big_card_overlay {
-    left: 0;
-    opacity: 1;
 }
 
 .our_projects_small_grid {
-    .our_projects_small_card:first-of-type {
-        margin-bottom: 23px;
-    }
-    .our_projects_small_card:last-of-type {
-        margin-left: 9px;
-    }
+    display: grid;
+    gap: 23px;
 }
 
 .our_projects_small_card {
     position: relative;
     overflow: hidden;
-    .small_card_img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        img {
-            width: 100%;
-        }
-    }
-    .small_card_overlay {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: -100%;
-        opacity: 0;
-        padding-left: 56px;
-        padding-right: 110px;
-        background: linear-gradient(329.39deg, #1C1E53 -10.96%, rgba(28, 30, 83, 0.42) 103.96%);
-        padding-top: 129px;
-        transition: all .4s ease;
-        h6 {
-            font-weight: 600;
-            color: white;
-            margin-bottom: 10px;
-        }
-    }
 }
 
-.sm_card_up:hover .sm_card_up_overlay,
-.sm_card_bot:hover .sm_card_bot_overlay {
-    left: 0;
-    opacity: 1;
-}
+// features
 
 .features {
     background-color: $grey;
@@ -448,13 +378,13 @@
     .we_work_grid {
         grid-template-columns: none;
     }
-    .features_text {
-        padding: 0px;
-    }
     .our_projects .container {
         padding: 64px 0;
     }
     .our_projects_grid {
         grid-template-columns: none;
+    }
+    .features_text {
+        padding: 0px;
     }
 }

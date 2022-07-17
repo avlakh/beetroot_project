@@ -24,31 +24,20 @@
             </div>
             <div class="our_projects_grid">
                 <div class="our_projects_big_card">
-                    <div class="big_card_img">
-                        <router-link to="#"><img src="@/assets/images/home/our_projects/big_card.jpg" alt="our_projects_big_card"></router-link>
-                    </div>
-                    <div class="big_card_overlay">
-                        <h6>Workhub office Webflow Webflow Design</h6>
-                        <p>Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam </p>
-                        <router-link to="#" class="arrow_btn">View project</router-link>
-                    </div>
+                    <template v-for="(item, index) in ourProjectsArr" :key="index">
+                        <our-projects-big v-if="index === 0" :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                    </template>
                 </div>
                 <div class="our_projects_small_grid">
                     <div class="our_projects_small_card sm_card_up">
-                        <div class="small_card_img">
-                            <router-link to="#"><img src="@/assets/images/home/our_projects/small_card_up.jpg" alt="our_projects_small_card_up"></router-link>
-                        </div>
-                        <div class="small_card_overlay sm_card_up_overlay">
-                            <h6>Unisaas Website Design</h6>
-                            <router-link to="#" class="arrow_btn">View portfolio</router-link>
-                        </div>
+                        <template v-for="(item, index) in ourProjectsArr" :key="index">
+                            <our-projects-sm v-if="index === 1" :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                        </template>
                     </div>
                     <div class="our_projects_small_card sm_card_bot">
-                        <div class="small_card_img"><router-link to="#"><img src="@/assets/images/home/our_projects/small_card_bot.jpg" alt="our_projects_small_card_bot"></router-link></div>
-                        <div class="small_card_overlay sm_card_bot_overlay">
-                            <h6>Unisaas Website Design</h6>
-                            <router-link to="#" class="arrow_btn">View portfolio</router-link>
-                        </div>
+                        <template v-for="(item, index) in ourProjectsArr" :key="index">
+                            <our-projects-sm v-if="index === 2" :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -143,30 +132,36 @@
 import HomeSection from '@/components/HomeSection.vue'
 import WeWork from '@/components/WeWork.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
+import OurProjectsBig from '@/components/OurProjectsBig.vue'
+import OurProjectsSm from '@/components/OurProjectsSm.vue'
 import BlogCards from '@/components/BlogCards.vue'
 import FaqsAccord from '@/components/FaqsAccord.vue'
 import 'vue3-carousel/dist/carousel.css';
-import {Carousel, Navigation, Slide} from 'vue3-carousel';
+import {Carousel, Navigation, Slide} from 'vue3-carousel'
 import axios from 'axios'
 
 export default {
     name: 'HomeView',
     components: {
-        HomeSection,
-        WeWork,
-        FeatureCards,
-        BlogCards,
-        FaqsAccord,
-        Carousel,
-        Navigation,
-        Slide
-    },
+    HomeSection,
+    WeWork,
+    FeatureCards,
+    OurProjectsBig,
+    OurProjectsSm,
+    BlogCards,
+    FaqsAccord,
+    Carousel,
+    Navigation,
+    Slide,
+    
+},
     data () {
         return {
             weWorkCardArr: [],
             featureCardsArr: [],
             homeSectionArr: [],
             homeSliderArr: [],
+            ourProjectsArr: [],
             sliderSettings: {
                 itemsToShow: 1,
                 autoplay: 3000,
@@ -194,6 +189,11 @@ export default {
             .get('../data/HomeSlider.json')
             .then(resp=>{
                 this.homeSliderArr = resp.data;
+            }),
+        axios 
+            .get('../data/WorksCard.json')
+            .then(resp=>{
+                this.ourProjectsArr = resp.data;
             })
     }
 }
@@ -211,6 +211,33 @@ export default {
     left: auto;
     bottom: -28px;
     right: 20px;
+    background: none;
+    svg {
+        display: none;
+    }
+    &::before {
+            content: url('@/assets/images/home/clients/prev_arrow.svg');
+            position: absolute;
+            opacity: 1;
+            width: 48px;
+            height: 48px;
+            top: 28%;
+            left: 0%;
+        }
+        &:hover::before {
+            content: url('@/assets/images/home/clients/prev_arrow_hover.svg');
+        }
+        &:hover::after {
+            content: '';
+            position: absolute;
+            z-index: -5;
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #5239FA;
+            border-radius: 50%;
+        }
 }
 .carousel__next {
     position: absolute;
@@ -221,6 +248,33 @@ export default {
     left: auto;
     bottom: -28px;
     right: 0;
+    background: none;
+    svg {
+        display: none;
+    }
+    &::before {
+            content: url('@/assets/images/home/clients/next_arrow.svg');
+            opacity: 1;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 28%;
+            left: 4%;
+        }
+        &:hover::before {
+            content: url('@/assets/images/home/clients/next_arrow_hover.svg');
+        }
+        &:hover::after {
+            content: '';
+            position: absolute;
+            z-index: -5;
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 48px;
+            background-color: #5239FA;
+            border-radius: 50%;
+        }
 }
 
 @media screen and (max-width: 600px) {
