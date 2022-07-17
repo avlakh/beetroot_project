@@ -11,24 +11,13 @@
             </template>
         </div>
     </section>
-    <section class="our_process container">
-        <h2>The process we follow</h2>
-        <div class="our_process_flex">
-            <div class="our_process_card">
-                <h6>Planning</h6>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-            </div>
-            <div class="our_process_card">
-                <h6>Conception</h6>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-            </div>
-            <div class="our_process_card">
-                <h6>Design</h6>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-            </div>
-            <div class="our_process_card">
-                <h6>Development</h6>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+    <section class="our_process">
+        <div class="container">
+            <h2>The process we follow</h2>
+            <div class="our_process_flex">
+                <template v-for="(item, index) in ourProcessArr" :key="index">
+                    <our-process :heading="item.heading" :paragraph="item.paragraph"/>
+                </template>
             </div>
         </div>
     </section>
@@ -84,6 +73,7 @@
 
 import axios from 'axios';
 import WhoWeAre from '@/components/WhoWeAre.vue';
+import OurProcess from '@/components/OurProcess.vue';
 import OurMission from '@/components/OurMission.vue';
 import OurMissionReverse from '@/components/OurMissionReverse.vue'
 import FeatureCards from '@/components/FeatureCards.vue'
@@ -94,6 +84,7 @@ export default {
     name: 'AboutUs',
     components: {
         WhoWeAre,
+        OurProcess,
         OurMission,
         OurMissionReverse,
         FeatureCards,
@@ -106,7 +97,8 @@ export default {
             featureCardsArr: [],
             teamCardsArr: [],
             featurePartnersArr: [],
-            whoWeAreArr: []
+            whoWeAreArr: [],
+            ourProcessArr: []
         }
     },
     created() {
@@ -134,6 +126,11 @@ export default {
             .get('../data/WhoWeAre.json')
             .then (resp => {
                 this.whoWeAreArr = resp.data;
+            }),
+        axios
+            .get('../data/OurProcess.json')
+            .then (resp => {
+                this.ourProcessArr = resp.data;
             })
     }
 

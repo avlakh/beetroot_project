@@ -21,36 +21,9 @@
         margin-bottom: 48px;
     }
 }
-
 .our_process_flex {
-    display: flex;
-    gap: 32px;
-}
-
-.our_process_card {
-    padding-top: 52px;
-    h6 {
-        margin-bottom: 13px;
-        position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            top: -55px;
-            border: 1px solid $royal-blue;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: $royal-blue;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            border-bottom: 2px dashed rgba(36, 5, 242, .4);
-            width: 224px;
-            top: -45px;
-            right: 25px;
-        }
-    }
+display: flex;
+gap: 32px;
 }
 
 // our mission
@@ -108,12 +81,6 @@
     }
     .our_process_flex {
         align-items: center;
-        h6::after {
-            content: none;
-        } 
-    }
-    .our_process_card {
-        justify-self: center;
     }
 }
 
