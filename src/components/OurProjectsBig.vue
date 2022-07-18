@@ -1,11 +1,11 @@
 <template>
         <div class="big_card_img">
-            <router-link to="#"><img :src="require('@/assets/images/works/templates/'+img)" :alt="imgAlt"></router-link>
+            <router-link :to="{name: 'works-project', params:{slug: item.slug}}"><img :src="require('@/assets/images/works/templates/'+item.img)" :alt="item.imgAlt"></router-link>
         </div>
         <div class="big_card_overlay">
-            <h6>{{heading}}</h6>
-            <p>{{descr}}</p>
-            <router-link to="#" class="arrow_btn">View project</router-link>
+            <h6>{{item.heading}}</h6>
+            <p>{{item.descr}}</p>
+            <router-link :to="{name: 'works-project', params:{slug: item.slug}}" class="arrow_btn">View project</router-link>
         </div>
 </template>
 
@@ -13,21 +13,8 @@
 export default {
     name: 'OurProjects',
     props: {
-        img: {
-            type: String,
-            default: ''
-        },
-        imgAlt: {
-            type: String,
-            default: ''
-        },
-        heading: {
-            type: String,
-            default: ''
-        },
-        descr: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

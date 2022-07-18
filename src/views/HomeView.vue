@@ -25,18 +25,18 @@
             <div class="our_projects_grid">
                 <div class="our_projects_big_card">
                     <template v-for="(item, index) in ourProjectsArr" :key="index">
-                        <our-projects-big v-if="index === 0" :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                        <our-projects-big v-if="index === 0" :item="item"/>
                     </template>
                 </div>
                 <div class="our_projects_small_grid">
                     <div class="our_projects_small_card sm_card_up">
                         <template v-for="(item, index) in ourProjectsArr" :key="index">
-                            <our-projects-sm v-if="index === 1" :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                            <our-projects-sm v-if="index === 1" :item="item"/>
                         </template>
                     </div>
                     <div class="our_projects_small_card sm_card_bot">
                         <template v-for="(item, index) in ourProjectsArr" :key="index">
-                            <our-projects-sm v-if="index === 2" :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                            <our-projects-sm v-if="index === 2" :item="item"/>
                         </template>
                     </div>
                 </div>
@@ -152,7 +152,6 @@
                 </div>
             </div>
         </div>
-        
     </section>
     <blog-cards/>
 </template>
@@ -234,7 +233,7 @@ export default {
                 this.homeSliderArr = resp.data;
             }),
         axios 
-            .get('../data/WorksCard.json')
+            .get('../data/Works/WorksCard.json')
             .then(resp=>{
                 this.ourProjectsArr = resp.data;
             })
@@ -264,7 +263,7 @@ export default {
                 valid = false;
             }
             if(valid){
-                const message_text = '<i>Messages from main contact form</i>'+
+                const message_text = '<i>Messages from home page form</i>'+
                 '%0a<b>Name: </b>'+this.name + 
                 '%0a<b>Email: </b>'+this.email + 
                 '%0a<b>Message: </b>'+this.message;

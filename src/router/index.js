@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
@@ -27,7 +27,7 @@ const routes = [
     component: () => import('@/views/WorksView.vue')
   },
   {
-    path: '/works/:title',
+    path: '/works/:slug',
     name: 'works-project',
     component: () => import('@/views/WorksProject.vue')
   },
@@ -60,7 +60,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior() {
     return { top: 0 }

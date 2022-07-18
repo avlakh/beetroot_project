@@ -4,7 +4,7 @@
             <h2>{{heading}}</h2>
             <p>{{descr}}</p>
         </div>
-        <router-link to="contact" class="round_btn">{{btnText}}</router-link>
+        <router-link to="/contact" class="round_btn">{{btnText}}</router-link>
     </section>
 </template>
 

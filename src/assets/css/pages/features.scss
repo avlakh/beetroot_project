@@ -1,5 +1,6 @@
 // benefits
-// reused from the about_us
+
+@import '@/assets/css/vars.scss';
 
 .features {
     padding: 84px 0;
@@ -166,12 +167,7 @@
     }
 }
 
-// footer
-// imported
-
 // responsive 
-
-
 
 @media screen and (max-width: 1100px) {
     .features_grid {

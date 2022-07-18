@@ -1,11 +1,13 @@
 <template>
     <div class="templates_card">
         <div class="templates_card_img">
-            <a href="#"><img :src="require('@/assets/images/works/templates/'+img)" :alt="imgAlt"></a>
+            <router-link :to="{name: 'works-project', params:{slug: item.slug}}">
+                <img :src="require('@/assets/images/works/templates/'+item.img)" :alt="item.imgAlt">
+            </router-link>
         </div>
-        <h3>{{heading}}</h3>
-        <p>{{descr}}</p>
-        <router-link to="/" class="arrow_btn">View Portfolio</router-link>
+        <h3>{{item.heading}}</h3>
+        <p>{{item.descr}}</p>
+        <router-link :to="{name: 'works-project', params:{slug: item.slug}}" class="arrow_btn">View Portfolio</router-link>
     </div>
 </template>
 
@@ -13,25 +15,8 @@
 export default {
     name: 'WorksCard',
     props: {
-        heading: {
-            type: String,
-            default: ''
-        },
-        descr: {
-            type: String,
-            default: ''
-        },
-        img: {
-            type: String,
-            default: ''
-        },
-        imgAlt: {
-            type: String,
-            default: ''
-        },
-        link: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

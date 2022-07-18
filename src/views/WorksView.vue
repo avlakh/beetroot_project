@@ -17,47 +17,52 @@
     <section class="templates container">
         <div class="templates_list_flex">
             <ul class="templates_list">
-                <li><a @click="setType('')" :class="{'active' : isClassActive}">All</a></li>
-                <li v-for="t in typesList" :key="t"><a @click="setType(t)" :class="{'active' : isClassActive}">{{t}} Design</a></li>
+                <li><a @click="setType('')" :class="{'active' : type === ''}">All</a></li>
+                <li v-for="t in typesList" :key="t"><a @click="setType(t)" :class="{'active' : t === type}">{{t}} Design</a></li>
             </ul>
         </div>
         <div class="templates_grid">
             <template v-for="(item, i) in cardList()" :key="i">
-                <works-card :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :descr="item.descr"/>
+                <works-card :item="item"/>
             </template>
         </div>
     </section>
-    <section class="build_together container">
-        <div class="build_together_text">
-            <h2>Let's build something great together</h2>
-            <p>Nullam vitae purus at tortor mattis dapibus. Morbi purus est, ultricies nec dolor sit amet, scelerisque cursus purus.</p>
-        </div>
-        <router-link to="contact" class="round_btn">Contact Us</router-link>
-    </section>
+    <template v-for="(item, i) in buildTogetherArr" :key="i">
+        <build-together :btnText="item.btnText" :heading="item.heading" :descr="item.descr"/>
+    </template>
+    
 </template>
 
 <script>
 import axios from 'axios'
 import WorksCard from '@/components/WorksCard.vue'
+import BuildTogether from '@/components/BuildTogether.vue'
+
 export default {
     name: 'WorksView',
     components: {
-        WorksCard
+        WorksCard,
+        BuildTogether
     },
     data (){
         return {
             worksCardArr: [],
+            buildTogetherArr: [],
             type: '',
-            typesList: [],
-            isClassActive: null
+            typesList: []
         }
     },
     created(){
         axios
-            .get('../data/WorksCard.json')
+            .get('../data/Works/WorksCard.json')
             .then(resp=>{
                 this.worksCardArr = resp.data;
                 this.getTypesList();
+            }),
+        axios
+            .get('../data/BuildTogether.json')
+            .then(resp=>{
+                this.buildTogetherArr = resp.data;
             })
     }, 
     methods: {
