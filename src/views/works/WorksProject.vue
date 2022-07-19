@@ -5,8 +5,8 @@
             <h2>{{item.projectHeadingName}}</h2>
             <p>{{item.projectHeadingDescr}}</p>
         </div>
-        <div class="case_header_img">
-            <img :src="require('@/assets/images/works/templates/'+item.mainImg)" :alt="item.mainImgAlt">
+        <div class="case_header_img" v-for="(img, i) in item.images" :key="i">
+            <img :src="require('@/assets/images/works/templates/'+img.mainImg)" :alt="item.mainImgAlt">
         </div>
         <div class="case_header_descr">
             <div class="descr_card">
@@ -28,8 +28,8 @@
             <h3>{{item.projectHeadingAbout}}</h3>
             <p>{{item.projectDescrAbout}}</p>
         </div>
-        <div class="case_about_img">
-            <img :src="require('@/assets/images/case_studies/'+item.botImg)" :alt="item.botImgAlt">
+        <div class="case_about_img" v-for="(img, i) in item.images" :key="i">
+            <img :src="require('@/assets/images/case_studies/'+img.botImg)" :alt="item.botImgAlt">
         </div>
         <div class="case_about_text">
             <h3>{{item.howHeading}}</h3>
