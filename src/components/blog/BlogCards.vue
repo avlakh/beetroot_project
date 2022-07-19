@@ -12,7 +12,7 @@
                             <h5>{{item.title}}</h5>
                             <p v-html="item.description"/>
                         </router-link>
-                        <router-link to="#" class="arrow_btn">Read More</router-link>
+                        <router-link :to="{name: 'blog-page', params:{title: item.title}}" class="arrow_btn">Read More</router-link>
                     </div>
                 </div>
             </div>

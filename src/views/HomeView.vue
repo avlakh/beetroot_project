@@ -1,6 +1,6 @@
 <template>
-    <template v-for="(item, i) in homeSectionArr">
-        <home-section :key="i" v-if="i === 0" :item="item"/>
+    <template v-for="(item, i) in homeSectionArr" :key="i">
+        <home-section v-if="i === 0" :item="item"/>
     </template>
     <section class="we_work">
         <div class="container">
@@ -10,7 +10,7 @@
                 <router-link to="contact" class="arrow_btn">Get in touch with us</router-link>
             </div>
             <div class="we_work_grid">
-                <template v-for="(item, i) in weWorkCardArr" :key="i" >
+                <template v-for="(item, i) in weWorkCardArr" :key="i">
                     <we-work :item="item"/>
                 </template>
             </div>
@@ -24,19 +24,19 @@
             </div>
             <div class="our_projects_grid">
                 <div class="our_projects_big_card">
-                    <template v-for="(item, index) in ourProjectsArr" :key="index">
-                        <our-projects-big v-if="index === 0" :item="item"/>
+                    <template v-for="(item, i) in ourProjectsArr">
+                        <our-projects-big :key="i" v-if="i === 0"  :item="item"/>
                     </template>
                 </div>
                 <div class="our_projects_small_grid">
                     <div class="our_projects_small_card sm_card_up">
-                        <template v-for="(item, index) in ourProjectsArr" :key="index">
-                            <our-projects-sm v-if="index === 1" :item="item"/>
+                        <template v-for="(item, i) in ourProjectsArr">
+                            <our-projects-sm :key="i" v-if="i === 1" :item="item"/>
                         </template>
                     </div>
                     <div class="our_projects_small_card sm_card_bot">
-                        <template v-for="(item, index) in ourProjectsArr" :key="index">
-                            <our-projects-sm v-if="index === 2" :item="item"/>
+                        <template v-for="(item, i) in ourProjectsArr" >
+                            <our-projects-sm :key="i" v-if="i === 2" :item="item"/>
                         </template>
                     </div>
                 </div>
@@ -124,24 +124,34 @@
                     <form id="home_form" @submit.prevent="checkAndSend">
                         <div v-if="answer.success" class="alert_success">
                             <svg width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
-                            <div>{{answer.text}}</div>
+                            <div>
+								{{answer.text}}
+							</div>
                         </div>
                         <div v-if="answer.success === false" class="alert_danger">
                             <svg width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>{{answer.text}}</div>
+							<div>
+								{{answer.text}}
+							</div>
                         </div>
                         <div class="form_flex">
                             <div class="form_name">
                                 <input type="text" placeholder="Your Name" :class="{'error_input' : errors.name !== ''}" @focus="resetError('name')" v-model.trim="name">
-                                <div class="form_error_text">{{errors.name}}</div>
+                                <div class="form_error_text">
+									{{errors.name}}
+								</div>
                             </div>
                             <div class="form_email">
                                 <input type="text" placeholder="Email" :class="{'error_input' : errors.email !== ''}" @focus="resetError('email')" v-model.trim="email">
-                                <div class="form_error_text">{{errors.email}}</div>
+                                <div class="form_error_text">
+									{{errors.email}}
+								</div>
                             </div>
                             <div class="form_message">
                                 <input type="text" :class="{'error_input' : errors.message !== ''}" placeholder="Paste your comment" @focus="resetError('message')" v-model.trim="message">
-                                <div class="form_error_text">{{errors.message}}</div>
+                                <div class="form_error_text">
+									{{errors.message}}
+								</div>
                             </div>
                             <button type="submit" class="round_btn">Send an Inquiry</button>
                         </div>
@@ -181,7 +191,7 @@ export default {
     FaqsAccord,
     Carousel,
     Navigation,
-    Slide,
+    Slide
 },
     data () {
         return {

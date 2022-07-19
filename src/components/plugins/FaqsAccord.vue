@@ -124,6 +124,12 @@ p {
     }
 }
 
+@media screen and (max-width: 700px) {
+    .vcp {
+        margin-bottom: 20px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .vcp {
         margin-bottom: 40px;
@@ -132,7 +138,7 @@ p {
 
 @media screen and (max-width: 400px) {
     .vcp {
-        margin-bottom: 55px;
+        margin-bottom: 60px;
     }
 }
 
