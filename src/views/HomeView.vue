@@ -1,6 +1,6 @@
 <template>
     <template v-for="(item, i) in homeSectionArr">
-        <home-section :key="i" v-if="i === 0" :heading="item.heading" :paragraph="item.paragraph" :heroImg="item.heroImg" :heroImgAlt="item.heroImgAlt" :arrowBtnStatus="item.arrowBtnStatus" :roundBtnText="item.roundBtnText" :roundBtnLink="item.roundBtnLink"/>
+        <home-section :key="i" v-if="i === 0" :item="item"/>
     </template>
     <section class="we_work">
         <div class="container">
@@ -11,7 +11,7 @@
             </div>
             <div class="we_work_grid">
                 <template v-for="(item, i) in weWorkCardArr" :key="i" >
-                    <we-work :img="item.img" :imgAlt="item.imgAlt" :heading="item.heading" :paragraph="item.paragraph"/>
+                    <we-work :item="item"/>
                 </template>
             </div>
         </div>
@@ -51,22 +51,22 @@
             </div>
             <div class="features_grid">
                 <template v-for="(item, i) in featureCardsArr">
-                    <feature-cards :key="i" v-if="i === 0" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                    <feature-cards :key="i" v-if="i === 0" :item="item"/>
                 </template>
                 <template v-for="(item, i) in featureCardsArr">
-                    <feature-cards :key="i" v-if="i === 1" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                    <feature-cards :key="i" v-if="i === 1" :item="item"/>
                 </template>
                 <template v-for="(item, i) in featureCardsArr">
-                    <feature-cards :key="i" v-if="i === 2" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                    <feature-cards :key="i" v-if="i === 2" :item="item"/>
                 </template>
                 <template v-for="(item, i) in featureCardsArr">
-                    <feature-cards :key="i" v-if="i === 3" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                    <feature-cards :key="i" v-if="i === 3" :item="item"/>
                 </template>
                 <template v-for="(item, i) in featureCardsArr">
-                    <feature-cards :key="i" v-if="i === 4" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                    <feature-cards :key="i" v-if="i === 4" :item="item"/>
                 </template>
                 <template v-for="(item, i) in featureCardsArr">
-                    <feature-cards :key="i" v-if="i === 5" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                    <feature-cards :key="i" v-if="i === 5" :item="item"/>
                 </template>
             </div>
         </div>

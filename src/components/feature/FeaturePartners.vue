@@ -1,15 +1,15 @@
 <template>
     <div class="features_users">
             <div class="features_users_numbers">
-                <h3>{{partnersNums}}</h3>
-                <h5>{{partnersDescr}}</h5>
+                <h3>{{item.partnersNums}}</h3>
+                <h5>{{item.partnersDescr}}</h5>
             </div>
             <div class="features_users_logos">
-                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+partnersLogoOne)" :alt="partnersLogoOneAlt"></a>
-                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+partnersLogoTwo)" :alt="partnersLogoTwoAlt"></a>
-                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+partnersLogoThree)" :alt="partnersLogoThreeAlt"></a>
-                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+partnersLogoFour)" :alt="partnersLogoFourAlt"></a>
-                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+partnersLogoFive)" :alt="partnersLogoFiveAlt"></a>
+                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+item.logos[0].img)" :alt="item.logos[0].alt"></a>
+                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+item.logos[1].img)" :alt="item.logos[1].alt"></a>
+                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+item.logos[2].img)" :alt="item.logos[2].alt"></a>
+                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+item.logos[3].img)" :alt="item.logos[3].alt"></a>
+                <a href="#"><img :src="require('@/assets/images/about_us/features_users/'+item.logos[4].img)" :alt="item.logos[4].alt"></a>
             </div>
         </div>
 </template>
@@ -18,53 +18,8 @@
 export default {
     name: 'FeaturePartners',
     props: {
-        partnersNums: {
-            type: String,
-            default: ''
-        },
-        partnersDescr: {
-            type: String,
-            default: ''
-        },
-        partnersLogoOne: {
-            type: String,
-            default: ''
-        },
-        partnersLogoOneAlt: {
-            type: String,
-            default: ''
-        },
-        partnersLogoTwo: {
-            type: String,
-            default: ''
-        },
-        partnersLogoTwoAlt: {
-            type: String,
-            default: ''
-        },
-        partnersLogoThree: {
-            type: String,
-            default: ''
-        },
-        partnersLogoThreeAlt: {
-            type: String,
-            default: ''
-        },
-        partnersLogoFour: {
-            type: String,
-            default: ''
-        },
-        partnersLogoFourAlt: {
-            type: String,
-            default: ''
-        },
-        partnersLogoFive: {
-            type: String,
-            default: ''
-        },
-        partnersLogoFiveAlt: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

@@ -26,9 +26,9 @@ display: flex;
 gap: 32px;
 }
 
-// our mission
+// our approach
 
-.our_mission {
+.our_approach {
     background-color: #EEF4FA;
     .container {
         padding: 128px 0;
@@ -91,7 +91,7 @@ gap: 32px;
 }
 
 @media screen and (max-width: 1100px) {
-    .our_mission_flex {
+    .our_approach_flex {
         flex-wrap: wrap;
         gap: 50px;
     }
@@ -136,7 +136,7 @@ gap: 32px;
     .our_process h2 {
         margin-bottom: 20px;
     }
-    .our_mission .container {
+    .our_approach .container {
         padding: 64px 0;
     }
     .our_process_flex {

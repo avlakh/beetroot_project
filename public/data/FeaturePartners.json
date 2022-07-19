@@ -2,15 +2,27 @@
     {
         "partnersNums": "100.000+",
         "partnersDescr": "Finsweet Users",
-        "partnersLogoOne": "logo1.svg",
-        "partnersLogoOneAlt": "logo1",
-        "partnersLogoTwo": "logo2.svg",
-        "partnersLogoTwoAlt": "logo2",
-        "partnersLogoThree": "logo3.svg",
-        "partnersLogoThreeAlt": "logo3",
-        "partnersLogoFour": "logo4.svg",
-        "partnersLogoFourAlt": "logo4",
-        "partnersLogoFive": "logo5.svg",
-        "partnersLogoFiveAlt": "logo5"
+        "logos": [
+            {
+                "img": "logo1.svg",
+                "alt": "logo1"
+            },
+            {
+                "img": "logo2.svg",
+                "alt": "logo2"
+            },
+            {
+                "img": "logo3.svg",
+                "alt": "logo3"
+            },
+            {
+                "img": "logo4.svg",
+                "alt": "logo4"
+            },
+            {
+                "img": "logo5.svg",
+                "alt": "logo5"
+            }
+        ]
     }
 ]

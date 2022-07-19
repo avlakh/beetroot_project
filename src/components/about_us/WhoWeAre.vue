@@ -1,17 +1,17 @@
 <template>
-    <h4>{{headingSm}}</h4>
+    <h4>{{item.headingSm}}</h4>
     <div class="who_we_are_flex">
         <div class="who_we_are_descr">
-            <h3>{{headingOne}}</h3>
-            <p>{{paragraphOne}}</p>
+            <h3>{{item.headingOne}}</h3>
+            <p>{{item.paragraphOne}}</p>
         </div>
         <div class="who_we_are_descr">
-            <h3>{{headingTwo}}</h3>
-            <p>{{paragraphTwo}}</p>
+            <h3>{{item.headingTwo}}</h3>
+            <p>{{item.paragraphTwo}}</p>
         </div>    
     </div>
     <div class="who_we_are_img">
-        <img :src="require('@/assets/images/about_us/'+img)" :alt="imgAlt">
+        <img :src="require('@/assets/images/about_us/'+item.img)" :alt="item.imgAlt">
     </div>
 </template>
 
@@ -19,33 +19,8 @@
 export default {
     name: 'WhoWeAre',
     props: {
-        headingSm: {
-            type: String,
-            default: ''
-        },
-        headingOne: {
-            type: String,
-            default: ''
-        },
-        paragraphOne: {
-            type: String,
-            default: ''
-        },
-        headingTwo: {
-            type: String,
-            default: ''
-        },
-        paragraphTwo: {
-            type: String,
-            default: ''
-        },
-        img: {
-            type: String,
-            default: ''
-        },
-        imgAlt: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

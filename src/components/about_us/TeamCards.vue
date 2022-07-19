@@ -1,18 +1,17 @@
 <template>
     <div class="our_team_card">
         <div class="our_team_photo_link">
-            <img :src="require('@/assets/images/about_us/our_team/'+img)" :alt="imgAlt">
+            <img :src="require('@/assets/images/about_us/our_team/'+item.img)" :alt="item.imgAlt">
             <div class="our_card_img_bg">
                 <ul class="our_card_soc_list">
-                    <!-- тут звісно би були динамічні лінки з джейсона на лінки з соцмереж - збережені як заглушки -->
                     <li><a href="https://www.facebook.com/" target="_blank"><i class="icon icon-facebook"></i></a></li>
                     <li><a href="https://twitter.com/" target="_blank"><i class="icon icon-twitter"></i></a></li>
                     <li><a href="https://www.linkedin.com/" target="_blank"><i class="icon icon-linkedin-square"></i></a></li>
                 </ul>
             </div>
         </div>
-        <h6>{{headingName}}</h6>
-        <h5>{{headingPosition}}</h5>
+        <h6>{{item.headingName}}</h6>
+        <h5>{{item.headingPosition}}</h5>
     </div>
 </template>
 
@@ -20,21 +19,8 @@
 export default {
     name: "TeamCards",
     props: {
-        img: {
-            type: String,
-            default: ''
-        },
-        imgAlt: {
-            type: String,
-            default: ''
-        },
-        headingName: {
-            type: String,
-            default: ''
-        },
-        headingPosition: {
-            type: String,
-            default: '',
+        item: {
+            type: Object
         }
     }
 }
@@ -63,7 +49,7 @@ export default {
         width: 168px;
         height: 168px;
         border-radius: 50%;
-        transform: translate(-168px);
+        transform: translateY(168px);
         background: linear-gradient(348.37deg, #5239FA 17.97%, rgba(255, 255, 255, 0) 79.2%);
         .our_card_soc_list {
             display: flex;

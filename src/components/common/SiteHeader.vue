@@ -13,7 +13,7 @@
                     <li><a href="/works">Works</a></li>
                     <li><a href="/blog">Blog</a></li>
                 </ul>
-                <a href="contact" class="header_contact_btn mobile_contact_btn">Contact us</a>
+                <a href="/contact" class="header_contact_btn mobile_contact_btn">Contact us</a>
                 <button type="button" class="header_btn" @click="toggleMobileMenu">Close</button>  
             </nav>
         </div>
@@ -35,7 +35,7 @@
                         <li><router-link to="/blog">Blog</router-link></li>
                     </ul>
                 </nav>
-                <router-link to="contact" class="header_contact_btn">Contact us</router-link>
+                <router-link to="/contact" class="header_contact_btn">Contact us</router-link>
                 <div class="hamburger_menu">
                     <button class="hamburger hamburger--arrow" type="button" :class="{'is-active' : isMobileMenuOpened}" @click="toggleMobileMenu">
                         <span class="hamburger-box">

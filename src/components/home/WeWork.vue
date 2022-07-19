@@ -1,8 +1,8 @@
 <template>
     <div class="we_work_card">
-        <img :src="require('@/assets/images/home/how_we_work/'+img)" :alt="imgAlt">
-        <h5>{{heading}}</h5>
-        <p>{{paragraph}}</p>
+        <img :src="require('@/assets/images/home/how_we_work/'+item.img)" :alt="item.imgAlt">
+        <h5>{{item.heading}}</h5>
+        <p>{{item.paragraph}}</p>
     </div>
 </template>
 
@@ -11,21 +11,8 @@
 export default {
     name: 'WeWork',
     props: {
-        img: {
-            type: String,
-            default: ''
-        },
-        imgAlt: {
-            type: String,
-            default: ''
-        },
-        heading: {
-            type: String,
-            default: ''
-        },
-        paragraph: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

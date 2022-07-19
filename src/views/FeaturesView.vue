@@ -1,45 +1,45 @@
 <template>
     <template v-for="(item, i) in homeSectionArr">
-        <home-section :key="i" v-if="i === 1" :heading="item.heading" :paragraph="item.paragraph" :heroImg="item.heroImg" :heroImgAlt="item.heroImgAlt" :arrowBtnStatus="item.arrowBtnStatus" :roundBtnText="item.roundBtnText" :roundBtnLink="item.roundBtnLink"/>
+        <home-section :key="i" v-if="i === 1" :item="item"/>
     </template>
     <section class="features container">
         <template v-for="(item, i) in featurePartnersArr">
-            <feature-partners :key="i" v-if="i === 0" :partnersNums="item.partnersNums" :partnersDescr="item.partnersDescr" :partnersLogoOne="item.partnersLogoOne" :partnersLogoOneAlt="item.partnersLogoOneAlt" :partnersLogoTwo="item.partnersLogoTwo" :partnersLogoTwoAlt="item.partnersLogoTwoAlt" :partnersLogoThree="item.partnersLogoThree" :partnersLogoThreeAlt="item.partnersLogoThreeAlt" :partnersLogoFour="item.partnersLogoFour" :partnersLogoFourAlt="item.partnersLogoFourAlt" :partnersLogoFive="item.partnersLogoFive" :partnersLogoFiveAlt="item.partnersLogoFiveAlt"/>
+            <feature-partners :key="i" v-if="i === 0" :item="item"/>
         </template>
         <h2>The benefits of working with our team</h2>
         <div class="features_grid">
             <template v-for="(item, i) in featureCardsArr">
-                <feature-cards :key="i" v-if="i === 6" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                <feature-cards :key="i" v-if="i === 6" :item="item"/>
             </template>
             <template v-for="(item, i) in featureCardsArr">
-                <feature-cards :key="i" v-if="i === 7" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                <feature-cards :key="i" v-if="i === 7" :item="item"/>
             </template>
             <template v-for="(item, i) in featureCardsArr">
-                <feature-cards :key="i" v-if="i === 8" :heading="item.heading" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+                <feature-cards :key="i" v-if="i === 8" :item="item"/>
             </template>
         </div>
     </section>
     <section class="our_approach_no_ptop container">
-        <template v-for="(item, i) in ourMissionArr">
-            <our-mission :key="i" v-if="i === 3" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+        <template v-for="(item, i) in ourApproachArr">
+            <our-approach :key="i" v-if="i === 3" :item="item"/>
         </template>
     </section>
     <section class="our_approach our_approach_grey">
         <div class="container">
-            <template v-for="(item, i) in ourMissionArr">
-                <our-mission-reverse :key="i" v-if="i === 4" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            <template v-for="(item, i) in ourApproachArr">
+                <our-approach-reverse :key="i" v-if="i === 4" :item="item"/>
             </template>
         </div>
     </section>
     <section class="our_approach container">
-        <template v-for="(item, i) in ourMissionArr">
-            <our-mission :key="i" v-if="i === 5" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+        <template v-for="(item, i) in ourApproachArr">
+            <our-approach :key="i" v-if="i === 5" :item="item"/>
         </template>
     </section>
     <section class="our_approach our_approach_yellow">
         <div class="container">
-            <template v-for="(item, i) in ourMissionArr">
-                <our-mission-reverse :key="i" v-if="i === 6" :headingSm="item.headingSm" :headingBg="item.headingBg" :paragraph="item.paragraph" :img="item.img" :imgAlt="item.imgAlt"/>
+            <template v-for="(item, i) in ourApproachArr">
+                <our-approach-reverse :key="i" v-if="i === 6" :item="item"/>
             </template>
         </div>
     </section>
@@ -52,8 +52,8 @@ import axios from 'axios'
 import HomeSection from '@/components/home/HomeSection.vue'
 import FeaturePartners from '@/components/feature/FeaturePartners.vue'
 import FeatureCards from '@/components/feature/FeatureCards.vue'
-import OurMission from '@/components/about_us/OurMission.vue';
-import OurMissionReverse from '@/components/about_us/OurMissionReverse.vue'
+import OurApproach from '@/components/about_us/OurApproach.vue';
+import OurApproachReverse from '@/components/about_us/OurApproachReverse.vue'
 import FaqsAccord from '@/components/plugins/FaqsAccord.vue'
 
 export default {
@@ -62,8 +62,8 @@ export default {
         HomeSection,
         FeaturePartners,
         FeatureCards,
-        OurMission,
-        OurMissionReverse,
+        OurApproach,
+        OurApproachReverse,
         FaqsAccord
     },
     data () {
@@ -71,7 +71,7 @@ export default {
             homeSectionArr: [],
             featurePartnersArr: [],
             featureCardsArr: [],
-            ourMissionArr: []
+            ourApproachArr: []
         }
     },
     created () {
@@ -91,9 +91,9 @@ export default {
                 this.featureCardsArr = resp.data;
             }),
         axios
-            .get('../data/OurMission.json')
+            .get('../data/OurApproach.json')
             .then (resp =>{
-                this.ourMissionArr = resp.data;
+                this.ourApproachArr = resp.data;
             })
     }
 }

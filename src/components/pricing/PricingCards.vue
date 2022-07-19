@@ -2,35 +2,35 @@
     <div class="pricing_card">
         <div class="pricing_card_wrap">
             <div class="card_price">
-                <h3>{{headingPrice}}</h3>
-                <h4 class="hover_yellow">{{headingPriceDescr}}</h4>
+                <h3>{{item.headingPrice}}</h3>
+                <h4 class="hover_yellow">{{item.headingPriceDescr}}</h4>
             </div>
-            <h6>{{headingProject}}</h6>
-            <p>{{projectParagraph}}</p>
+            <h6>{{item.headingProject}}</h6>
+            <p>{{item.projectParagraph}}</p>
             <ul class="pricing_card_features">
                 <li>
-                    <span><img :src="require('@/assets/images/pricing/'+svgActive)" :alt="svgActiveAlt"></span>
-                    <span>{{featureOne}}</span>
+                    <span><img :src="require('@/assets/images/pricing/'+item.svgActive)" :alt="item.svgActiveAlt"></span>
+                    <span>{{item.featureOne}}</span>
                 </li>
                 <li>
-                    <span><img :src="require('@/assets/images/pricing/'+svgActive)" :alt="svgActiveAlt"></span>
-                    <span>{{featureTwo}}</span>
+                    <span><img :src="require('@/assets/images/pricing/'+item.svgActive)" :alt="item.svgActiveAlt"></span>
+                    <span>{{item.featureTwo}}</span>
                 </li>
                 <li>
-                    <span><img :src="require('@/assets/images/pricing/'+svgActive)" :alt="svgActiveAlt"></span>
-                    <span>{{featureThree}}</span>
+                    <span><img :src="require('@/assets/images/pricing/'+item.svgActive)" :alt="item.svgActiveAlt"></span>
+                    <span>{{item.featureThree}}</span>
                 </li>
                 <li>
-                    <span><img :src="require('@/assets/images/pricing/'+svgActive)" :alt="svgInactiveAlt"></span>
-                    <span :class="{features_na}">{{featureFour}}</span>
+                    <span><img :src="require('@/assets/images/pricing/'+item.svgActive)" :alt="item.svgInactiveAlt"></span>
+                    <span :class="{features_na}">{{item.featureFour}}</span>
                 </li>
                 <li>
-                    <span><img :src="require('@/assets/images/pricing/'+svgActive)" :alt="svgInactiveAlt"></span>
-                    <span :class="{features_na}">{{featureFive}}</span>
+                    <span><img :src="require('@/assets/images/pricing/'+item.svgActive)" :alt="item.svgInactiveAlt"></span>
+                    <span :class="{features_na}">{{item.featureFive}}</span>
                 </li>
                 <li>
-                    <span><img :src="require('@/assets/images/pricing/'+svgActive)" :alt="svgInactiveAlt"></span>
-                    <span :class="{features_na}">{{featureSix}}</span>
+                    <span><img :src="require('@/assets/images/pricing/'+item.svgActive)" :alt="item.svgInactiveAlt"></span>
+                    <span :class="{features_na}">{{item.featureSix}}</span>
                 </li>
             </ul>
         </div>
@@ -43,61 +43,8 @@
 export default {
     name: 'PricingCards',
     props: {
-        headingPrice: {
-            type: String,
-            default: ''
-        },
-        headingPriceDescr: {
-            type: String,
-            default: ''
-        },
-        headingProject: {
-            type: String,
-            default: ''
-        },
-        projectParagraph: {
-            type: String,
-            default: '',
-        },
-        svgActive: {
-            type: String,
-            default: ''
-        },
-        svgActiveAlt: {
-            type: String,
-            default: ''
-        },
-        svgInactive: {
-            type: String,
-            default: ''
-        },
-        svgInactiveAlt: {
-            type: String,
-            default: ''
-        },
-        featureOne: {
-            type: String,
-            default: ''
-        },
-        featureTwo: {
-            type: String,
-            default: ''
-        },
-        featureThree: {
-            type: String,
-            default: '',
-        },
-        featureFour: {
-            type: String,
-            default: ''
-        },
-        featureFive: {
-            type: String,
-            default: '',
-        },
-        featureSix: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         },
         features_na: {
             type: Boolean,

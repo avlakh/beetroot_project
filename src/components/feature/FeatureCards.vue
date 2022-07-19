@@ -1,30 +1,18 @@
 <template>
     <div class="features_card">
-        <img :src="require('@/assets/images/'+img)" :alt="imgAlt">
-        <h6>{{heading}}</h6>
-        <p>{{paragraph}}</p>
+        <img :src="require('@/assets/images/'+item.img)" :alt="item.imgAlt">
+        <h6>{{item.heading}}</h6>
+        <p>{{item.paragraph}}</p>
     </div>
 </template>
 
 <script>
+
 export default {
     name: 'FeatureCards',
     props: {
-        img: {
-            type: String,
-            default: ''
-        },
-        imgAlt: {
-            type: String,
-            default: ''
-        },
-        heading: {
-            type: String,
-            default: ''
-        },
-        paragraph: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

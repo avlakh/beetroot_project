@@ -7,15 +7,15 @@
         <div class="pricing_cards_flex">
             <!-- 1 -->
             <template v-for="(item, i) in pricingCardsArr">
-                <pricing-cards :key="i" v-if="i === 0" :headingPrice="item.headingPrice" :headingPriceDescr="item.headingPriceDescr" :headingProject="item.headingProject" :projectParagraph="item.projectParagraph" :svgActive="item.svgActive" :svgActiveAlt="item.svgActiveAlt" :svgInactive="item.svgInactive" :svgInactiveAlt="item.svgInactiveAlt" :featureOne="item.featureOne" :featureTwo="item.featureTwo" :featureThree="item.featureThree" :featureFour="item.featureFour" :featureFive="item.featureFive" :featureSix="item.featureSix" :features_na="item.features_na"/>
+                <pricing-cards :key="i" v-if="i === 0" :item="item" :features_na="item.features_na"/>
             </template>
             <!-- 2 -->
             <template v-for="(item, i) in pricingCardsArr">
-                <pricing-cards :key="i" v-if="i === 1" :headingPrice="item.headingPrice" :headingPriceDescr="item.headingPriceDescr" :headingProject="item.headingProject" :projectParagraph="item.projectParagraph" :svgActive="item.svgActive" :svgActiveAlt="item.svgActiveAlt" :svgInactive="item.svgInactive" :svgInactiveAlt="item.svgInactiveAlt" :featureOne="item.featureOne" :featureTwo="item.featureTwo" :featureThree="item.featureThree" :featureFour="item.featureFour" :featureFive="item.featureFive" :featureSix="item.featureSix"/>
+                <pricing-cards :key="i" v-if="i === 1" :item="item"/>
             </template>
             <!-- 3 -->
             <template v-for="(item, i) in pricingCardsArr">
-                <pricing-cards :key="i" v-if="i === 2" :headingPrice="item.headingPrice" :headingPriceDescr="item.headingPriceDescr" :headingProject="item.headingProject" :projectParagraph="item.projectParagraph" :svgActive="item.svgActive" :svgActiveAlt="item.svgActiveAlt" :svgInactive="item.svgInactive" :svgInactiveAlt="item.svgInactiveAlt" :featureOne="item.featureOne" :featureTwo="item.featureTwo" :featureThree="item.featureThree" :featureFour="item.featureFour" :featureFive="item.featureFive" :featureSix="item.featureSix"/>
+                <pricing-cards :key="i" v-if="i === 2" :item="item"/>
             </template>
         </div>           
     </section>

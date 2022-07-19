@@ -1,7 +1,7 @@
 <template>
     <div class="our_process_card">
-        <h6>{{heading}}</h6>
-        <p>{{paragraph}}</p>
+        <h6>{{item.heading}}</h6>
+        <p>{{item.paragraph}}</p>
     </div>
 </template>
 
@@ -9,13 +9,8 @@
 export default {
     name: 'OurProcess',
     props: {
-        heading: {
-            type: String,
-            default: ''
-        },
-        paragraph: {
-            type: String,
-            deafult: ''
+        item: {
+            type: Object
         }
     }
 }

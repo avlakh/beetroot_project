@@ -43,11 +43,11 @@
                     <nav>
                         <ul class="footer_bottom_menu">
                             <li><router-link to="/">Home</router-link></li>
-                            <li><router-link to="about-us">About us</router-link></li>
-                            <li><router-link to="features">Features</router-link></li>
-                            <li><router-link to="pricing">Pricing</router-link></li>
-                            <li><router-link to="works">Works</router-link></li>
-                            <li><router-link to="blog">Blog</router-link></li>
+                            <li><router-link to="/about-us">About us</router-link></li>
+                            <li><router-link to="/features">Features</router-link></li>
+                            <li><router-link to="/pricing">Pricing</router-link></li>
+                            <li><router-link to="/works">Works</router-link></li>
+                            <li><router-link to="/blog">Blog</router-link></li>
                         </ul>
                     </nav>
                 </div>

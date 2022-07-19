@@ -1,10 +1,10 @@
 <template>
     <section class="build_together container">
         <div class="build_together_text">
-            <h2>{{heading}}</h2>
-            <p>{{descr}}</p>
+            <h2>{{item.heading}}</h2>
+            <p>{{item.descr}}</p>
         </div>
-        <router-link to="/contact" class="round_btn">{{btnText}}</router-link>
+        <router-link to="/contact" class="round_btn">{{item.btnText}}</router-link>
     </section>
 </template>
 
@@ -12,17 +12,8 @@
 export default {
     name: 'BuildTogether',
     props: {
-        heading: {
-            type: String,
-            default: ''
-        },
-        descr: {
-            type: String,
-            default: ''
-        },
-        btnText: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }

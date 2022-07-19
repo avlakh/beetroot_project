@@ -55,7 +55,7 @@
     </section>
 
     <template v-for="(item, i) in buildTogetherArr" :key="i">
-        <build-together :btnText="item.btnText" :heading="item.heading" :descr="item.descr"/>
+        <build-together :item="item"/>
     </template>
 </template>
 

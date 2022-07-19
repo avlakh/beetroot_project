@@ -3,20 +3,18 @@
             <div class="container">
                 <div class="hero_text">
                     <div class="hero_text_body">
-                        <h1>{{heading}}</h1>
-                        <p>{{paragraph}}</p>
+                        <h1>{{item.heading}}</h1>
+                        <p>{{item.paragraph}}</p>
                     </div>
                     <div class="hero_btn">
-                        
-                        <router-link :to="roundBtnLink" class="round_btn">{{roundBtnText}}</router-link>
-                        <template v-if="arrowBtnStatus">
+                        <router-link :to="item.roundBtnLink" class="round_btn">{{item.roundBtnText}}</router-link>
+                        <template v-if="item.arrowBtnStatus">
                             <router-link to="pricing" class="arrow_btn">View Pricing</router-link>
                         </template>
-                        
                     </div>
                 </div>
                 <div class="hero_img">
-                    <img :src="require('@/assets/images/'+heroImg)" :alt="heroImgAlt">
+                    <img :src="require('@/assets/images/'+item.heroImg)" :alt="item.heroImgAlt">
                 </div>
             </div>
         </section>
@@ -26,33 +24,8 @@
 export default {
     name: 'HomeSection',
     props: {
-        heading: {
-            type: String,
-            default: ''
-        },
-        paragraph: {
-            type: String,
-            default: ''
-        },
-        heroImg: {
-            type: String,
-            default: ''
-        },
-        heroImgAlt: {
-            type: String,
-            default: ''
-        },
-        arrowBtnStatus: {
-            type: Boolean,
-            default: false
-        },
-        roundBtnText: {
-            type: String,
-            default: ''
-        },
-        roundBtnLink: {
-            type: String,
-            default: ''
+        item: {
+            type: Object
         }
     }
 }
