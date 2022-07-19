@@ -25,8 +25,8 @@
 <script>
 
 import axios from 'axios'
-import PricingCards from '@/components/PricingCards.vue'
-import FaqsAccord from '@/components/FaqsAccord.vue'
+import PricingCards from '@/components/pricing/PricingCards.vue'
+import FaqsAccord from '@/components/plugins/FaqsAccord.vue'
 
 export default {
     name: 'PricingView',

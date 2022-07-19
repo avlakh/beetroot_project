@@ -49,12 +49,12 @@
 <script>
 
 import axios from 'axios'
-import HomeSection from '@/components/HomeSection.vue'
-import FeaturePartners from '@/components/FeaturePartners.vue'
-import FeatureCards from '@/components/FeatureCards.vue'
-import OurMission from '@/components/OurMission.vue';
-import OurMissionReverse from '@/components/OurMissionReverse.vue'
-import FaqsAccord from '@/components/FaqsAccord.vue'
+import HomeSection from '@/components/home/HomeSection.vue'
+import FeaturePartners from '@/components/feature/FeaturePartners.vue'
+import FeatureCards from '@/components/feature/FeatureCards.vue'
+import OurMission from '@/components/about_us/OurMission.vue';
+import OurMissionReverse from '@/components/about_us/OurMissionReverse.vue'
+import FaqsAccord from '@/components/plugins/FaqsAccord.vue'
 
 export default {
     name: 'FeaturesView',

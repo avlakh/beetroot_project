@@ -35,8 +35,8 @@
 
 <script>
 import axios from 'axios'
-import WorksCard from '@/components/WorksCard.vue'
-import BuildTogether from '@/components/BuildTogether.vue'
+import WorksCard from '@/components/works/WorksCard.vue'
+import BuildTogether from '@/components/works/BuildTogether.vue'
 
 export default {
     name: 'WorksView',

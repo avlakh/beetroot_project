@@ -8,8 +8,8 @@
 
 <script>
 
-import SiteHeader from '@/components/SiteHeader.vue'
-import SiteFooter from '@/components/SiteFooter.vue'
+import SiteHeader from '@/components/common/SiteHeader.vue'
+import SiteFooter from '@/components/common/SiteFooter.vue'
 
 export default {
   components: {

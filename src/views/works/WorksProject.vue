@@ -62,7 +62,7 @@
 <script>
 
 import axios from 'axios';
-import BuildTogether from '@/components/BuildTogether.vue';
+import BuildTogether from '@/components/works/BuildTogether.vue';
 
 export default {
     name: 'WorksProject',

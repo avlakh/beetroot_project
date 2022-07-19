@@ -24,22 +24,22 @@ const routes = [
   {
     path: '/works',
     name: 'works',
-    component: () => import('@/views/WorksView.vue')
+    component: () => import('@/views/works/WorksView.vue')
   },
   {
     path: '/works/:slug',
     name: 'works-project',
-    component: () => import('@/views/WorksProject.vue')
+    component: () => import('@/views/works/WorksProject.vue')
   },
   {
     path: '/blog',
     name: 'blog',
-    component: () => import('@/views/BlogView.vue')
+    component: () => import('@/views/blog/BlogView.vue')
   },
   {
     path: '/blog/:title',
     name: 'blog-page',
-    component: () => import('@/views/BlogPage.vue')
+    component: () => import('@/views/blog/BlogPage.vue')
   },
   {
     path: '/privacy-policy',

@@ -158,13 +158,13 @@
 
 <script>
 
-import HomeSection from '@/components/HomeSection.vue'
-import WeWork from '@/components/WeWork.vue'
-import FeatureCards from '@/components/FeatureCards.vue'
-import OurProjectsBig from '@/components/OurProjectsBig.vue'
-import OurProjectsSm from '@/components/OurProjectsSm.vue'
-import BlogCards from '@/components/BlogCards.vue'
-import FaqsAccord from '@/components/FaqsAccord.vue'
+import HomeSection from '@/components/home/HomeSection.vue'
+import WeWork from '@/components/home/WeWork.vue'
+import FeatureCards from '@/components/feature/FeatureCards.vue'
+import OurProjectsBig from '@/components/home/OurProjectsBig.vue'
+import OurProjectsSm from '@/components/home/OurProjectsSm.vue'
+import BlogCards from '@/components/blog/BlogCards.vue'
+import FaqsAccord from '@/components/plugins/FaqsAccord.vue'
 import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Navigation, Slide} from 'vue3-carousel'
 import axios from 'axios'

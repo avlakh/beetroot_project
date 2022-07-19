@@ -72,13 +72,13 @@
 <script>
 
 import axios from 'axios';
-import WhoWeAre from '@/components/WhoWeAre.vue';
-import OurProcess from '@/components/OurProcess.vue';
-import OurMission from '@/components/OurMission.vue';
-import OurMissionReverse from '@/components/OurMissionReverse.vue'
-import FeatureCards from '@/components/FeatureCards.vue'
-import FeaturePartners from '@/components/FeaturePartners.vue';
-import TeamCards from '@/components/TeamCards.vue'
+import WhoWeAre from '@/components/about_us/WhoWeAre.vue';
+import OurProcess from '@/components/about_us/OurProcess.vue';
+import OurMission from '@/components/about_us/OurMission.vue';
+import OurMissionReverse from '@/components/about_us/OurMissionReverse.vue'
+import FeatureCards from '@/components/feature/FeatureCards.vue'
+import FeaturePartners from '@/components/feature/FeaturePartners.vue';
+import TeamCards from '@/components/about_us/TeamCards.vue'
 
 export default {
     name: 'AboutUs',
