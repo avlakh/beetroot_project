@@ -1,20 +1,20 @@
 <template>
-    <div class="features_card">
-        <img :src="require('@/assets/images/'+item.img)" :alt="item.imgAlt">
-        <h6>{{item.heading}}</h6>
-        <p>{{item.paragraph}}</p>
-    </div>
+	<div class="features_card">
+		<img :src="require('@/assets/images/'+item.img)" :alt="item.imgAlt">
+		<h6>{{item.heading}}</h6>
+		<p>{{item.paragraph}}</p>
+	</div>
 </template>
 
 <script>
 
 export default {
-    name: 'FeatureCards',
-    props: {
-        item: {
-            type: Object
-        }
-    }
+	name: 'FeatureCards',
+	props: {
+		item: {
+			type: Object
+		}
+	}
 }
 </script>
 
@@ -24,21 +24,27 @@ export default {
 
 
 .features_card {
-    background-color: #fff;
-    padding-top: 48px;
-    padding-left: 48px;
-    padding-bottom: 48px;
-    padding-right: 32px;
-    img {
-        padding-bottom: 25px;
-    }
-    h6 {
-        padding-bottom: 12px;
-    }
-    p {
-        line-height: 28px;
-        color: rgba(40, 41, 56, 0.7)
-    }
+	background-color: #fff;
+	padding-top: 48px;
+	padding-left: 48px;
+	padding-bottom: 48px;
+	padding-right: 32px;
+	img {
+		padding-bottom: 25px;
+	}
+	h6 {
+		padding-bottom: 12px;
+	}
+	p {
+		line-height: 28px;
+		color: rgba(40, 41, 56, 0.7)
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.features_card {
+		padding: 24px 24px;
+	}
 }
 
 </style>
