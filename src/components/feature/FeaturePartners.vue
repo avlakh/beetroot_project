@@ -27,46 +27,55 @@ export default {
 
 <style lang="scss" scoped>
 
-	@import '@/assets/css/vars.scss';
-	.features_users {
-		display: flex;
-		gap: 89px;
-		align-items: center;
-	}
+@import '@/assets/css/vars.scss';
+.features_users {
+	display: flex;
+	gap: 89px;
+	align-items: center;
+}
 
-	.features_users_numbers h5 {
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 28px;
-		color: $dark-blue;
+.features_users_numbers h5 {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	color: $dark-blue;
+	opacity: 0.7;
+}
+
+.features_users_logos {
+	display: flex;
+	gap: 70px;
+	img {
+		width: 100%;
+		height: 100%;
 		opacity: 0.7;
-	}
-
-	.features_users_logos {
-		display: flex;
-		gap: 70px;
-		img {
-			width: 100%;
-			height: 100%;
-			opacity: 0.7;
-			&:hover {
-				opacity: 1;
-			}
-		}
-	}
-
-	@media screen and (max-width: 1200px) {
-	.features_users {
-		flex-direction: column;
-	}
-	@media screen and (max-width: 1000px) {
-		.features_users {
-		gap: 60px;
-		}
-		.features_users_logos {
-			flex-wrap: wrap;
-			gap: 25px;
+		&:hover {
+			opacity: 1;
 		}
 	}
 }
+
+@media screen and (max-width: 1200px) {
+	.features_users {
+	flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.features_users {
+		gap: 60px;
+	}
+	.features_users_logos {
+		flex-wrap: wrap;
+		gap: 25px;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.features_users {
+		gap: 30px;
+	}
+}
+
 </style>

@@ -50,4 +50,11 @@ export default {
 		height: 100%;
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.our_approach_flex:first-of-type {
+		margin-bottom: 0px;
+	}
+}
+
 </style>

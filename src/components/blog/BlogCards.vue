@@ -139,6 +139,14 @@ export default {
 	}
 }
 
+@media screen and (max-width: 600px) {
+	.our_blog .heading_link {
+		font-size: 36px;
+		line-height: 44px;
+		margin-bottom: 32px;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.blog_card_wrap .blog_card {
 		width: 100%;
