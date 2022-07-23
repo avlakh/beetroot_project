@@ -6,10 +6,10 @@
 				<h2>Our Work Portfolio</h2>
 				<p>We help teams create great digital products by providing them with tools and technology to make the design-to-code process universally accessible.</p>
 				<ul class="sm_list">
-					<li><a href="https://www.facebook.com/" target="_blank"><i class="icon icon-facebook"></i></a></li>
-					<li><a href="https://twitter.com/" target="_blank"><i class="icon icon-twitter"></i></a></li>
-					<li><a href="https://www.instagram.com/" target="_blank"><i class="icon icon-instagram"></i></a></li>
-					<li><a href="https://www.linkedin.com/" target="_blank"><i class="icon icon-linkedin-square"></i></a></li>
+					<li><a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="icon icon-facebook"></i></a></li>
+					<li><a href="https://twitter.com/" target="_blank" title="Twitter"><i class="icon icon-twitter"></i></a></li>
+					<li><a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="icon icon-instagram"></i></a></li>
+					<li><a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="icon icon-linkedin-square"></i></a></li>
 				</ul>
 			</div>
 		</div>

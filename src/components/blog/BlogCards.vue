@@ -47,6 +47,12 @@ export default {
 				.get(url)
 				.then(resp=>{
 					this.list = resp.data.articles;
+					if (resp.data.articles.length === 0) {
+					this.$router.push('/404')
+					}
+				})
+				.catch(()=>{
+					this.$router.push('/404')
 				})
 	}
 }

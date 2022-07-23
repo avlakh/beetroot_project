@@ -4,9 +4,9 @@
 			<img :src="require('@/assets/images/about_us/our_team/'+item.img)" :alt="item.imgAlt">
 			<div class="our_card_img_bg">
 				<ul class="our_card_soc_list">
-					<li><a href="https://www.facebook.com/" target="_blank"><i class="icon icon-facebook"></i></a></li>
-					<li><a href="https://twitter.com/" target="_blank"><i class="icon icon-twitter"></i></a></li>
-					<li><a href="https://www.linkedin.com/" target="_blank"><i class="icon icon-linkedin-square"></i></a></li>
+					<li><a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="icon icon-facebook"></i></a></li>
+					<li><a href="https://twitter.com/" target="_blank" title="Twitter"><i class="icon icon-twitter"></i></a></li>
+					<li><a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="icon icon-linkedin-square"></i></a></li>
 				</ul>
 			</div>
 		</div>

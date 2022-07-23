@@ -2,17 +2,15 @@
 		<section class="blog_home container">
 			<template v-for="(item, index) in list" :key="index">
 				<template v-if="index === 0">
-					<div class="blog_home_main_text">
-						<router-link :to="{name: 'blog-page', params:{title: item.title}}">
+					<router-link :to="{name: 'blog-page', params:{title: item.title}}">
+						<div class="blog_home_main_text">
 							<h2>{{item.title}}</h2>
 							<p><span class="blog_home_author_name">{{item.author}}</span><span>{{item.publishedAt}}</span></p>
-						</router-link>
-					</div>
-					<div class="blog_home_img">
-						<router-link :to="{name: 'blog-page', params:{title: item.title}}">
+						</div>
+						<div class="blog_home_img">
 							<img :src="item.urlToImage" :alt="item.title">
-						</router-link>
-					</div>
+						</div>
+					</router-link>
 					<div class="blog_home_descr">
 						<p v-html="item.description"></p>
 						<router-link :to="{name: 'blog-page', params:{title: item.title}}">Read More</router-link>
@@ -28,7 +26,7 @@
 						<div class="blog_card" v-if="index > 0">
 							<router-link :to="{name: 'blog-page', params:{title: item.title}}">
 								<div class="blog_card_img">
-									<img :src="item.urlToImage" :alt="item.title">
+									<img :src="item.urlToImage" :alt="item.title" @error="imgPlaceholder">
 								</div>
 								<h6>{{item.publishedAt}}</h6>
 								<h5>{{item.title}}</h5>
@@ -82,14 +80,22 @@ export default {
 			axios
 				.get(url)
 				.then(resp=>{
+					if (resp.data.articles.length === 0) {
+						this.$router.push('/404')
+					}
 					this.list = resp.data.articles;
-					// this.total = Math.ceil(resp.data.totalResults / 18)
-					this.total = 4;
+					this.total = Math.ceil(resp.data.totalResults / 18);	
+				})
+				.catch(()=>{
+					this.$router.push('/404')
 				})
 		},
 		goToPage(new_page) {
 			this.page = new_page;
 			this.fetchData();
+		},
+		imgPlaceholder(e){
+			e.target.src = require('@/assets/images/placeholder.png')
 		}
 	}
 }

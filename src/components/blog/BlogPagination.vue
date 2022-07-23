@@ -1,36 +1,35 @@
 <template>
-		<nav class="pagination-wrap" v-if="total !== 0">
-			<ul class="pagination">
-				<li class="page-item" :class="{disabled: isDisabledFirst}">
-					<a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
+	<nav class="pagination-wrap" v-if="total !== 0">
+		<ul class="pagination">
+			<li class="page-item" :class="{disabled: isDisabledFirst}">
+				<a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
+			</li>
+			<template v-if="showFirst">
+				<li class="page-item" aria-current="page">
+					<a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
 				</li>
-				<template v-if="showFirst">
-					<li class="page-item" aria-current="page">
-						<a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
-					</li>
-					<li class="page-item" aria-current="page">
-						<a class="page-link">...</a>
-					</li>
-				</template>
-				<template v-for="p in pageRange" :key="p">
-					<li class="page-item" :class="{active: p === page}">
-						<a class="page-link" href="#" @click.prevent="goToPage(p)">{{p}}</a>
-					</li>
-				</template>
-				<template v-if="showLast">
-					<li class="page-item" aria-current="page">
-						<a class="page-link">...</a>
-					</li>
-					<li class="page-item" aria-current="page">
-						<a class="page-link" href="#" @click.prevent="goToPage(total)">{{total}}</a>
-					</li>
-				</template>
-  
-				<li class="page-item" :class="{disabled: isDisabledLast}">
-					<a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
+				<li class="page-item" aria-current="page">
+					<a class="page-link">...</a>
 				</li>
-			</ul>
-		</nav>
+			</template>
+			<template v-for="p in pageRange" :key="p">
+				<li class="page-item" :class="{active: p === page}">
+					<a class="page-link" href="#" @click.prevent="goToPage(p)">{{p}}</a>
+				</li>
+			</template>
+			<template v-if="showLast">
+				<li class="page-item" aria-current="page">
+					<a class="page-link">...</a>
+				</li>
+				<li class="page-item" aria-current="page">
+					<a class="page-link" href="#" @click.prevent="goToPage(total)">{{total}}</a>
+				</li>
+			</template>
+			<li class="page-item" :class="{disabled: isDisabledLast}">
+				<a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
+			</li>
+		</ul>
+	</nav>
 </template>
 
 <script>
