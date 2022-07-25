@@ -1,0 +1,62 @@
+[
+    {
+        "img": "home/features/client_first.svg",
+        "imgAlt": "client_first",
+        "heading": "Uses Client First",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi."
+    },
+    {
+        "img": "home/features/revision.svg",
+        "imgAlt": "two_free_revision_round",
+        "heading": "Two Free Revision Round",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi."
+    },
+    {
+        "img": "home/features/template.svg",
+        "imgAlt": "template_customization",
+        "heading": "Template Customization",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi."
+    },
+    {
+        "img": "home/features/support.svg",
+        "imgAlt": "24_7_support",
+        "heading": "24/7 Support",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi."
+    },
+    {
+        "img": "home/features/delivery.svg",
+        "imgAlt": "quick_delivery",
+        "heading": "Quick Delivery",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi."
+    },
+    {
+        "img": "home/features/approach.svg",
+        "imgAlt": "hands_on_approach",
+        "heading": "Hands-on approach",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi."
+    },
+    {
+        "img": "home/features/approach.svg",
+        "imgAlt": "hands_on_approach",
+        "heading": "Customize with ease",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim."
+    },
+    {
+        "img": "home/features/template.svg",
+        "imgAlt": "template_customization",
+        "heading": "Perfectly Responsive",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim."
+    },
+    {
+        "img": "home/features/client_first.svg",
+        "imgAlt": "client_first",
+        "heading": "Friendly Support",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim."
+    },
+    {
+        "img": "",
+        "imgAlt": "",
+        "heading": "",
+        "paragraph": ""
+    }
+]

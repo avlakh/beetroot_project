@@ -1,0 +1,51 @@
+[
+    {
+        "img": "about_us/about_us_home_img.jpg",
+        "imgAlt": "about_us_people_sitting_on_the_table",
+        "headingBg": "Our designs solve problems",
+        "headingSm": "About us",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "img": "about_us/our_mission_guy_standing.jpg",
+        "imgAlt": "our_mission_guy_standing",
+        "headingBg": "Inspire, Innovate, Share",
+        "headingSm": "Our Mission",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+        "img": "about_us/our_mission_girls_meeting.jpg",
+        "imgAlt": "our_mission_girls_meeting",
+        "headingBg": "Laser focus",
+        "headingSm": "Our Vision",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+        "img": "features/client_first.jpg",
+        "imgAlt": "client_first_approach",
+        "headingBg": "Top agencies and freelancers around the world use Client-first",
+        "headingSm": "Use Client-first",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+    },
+    {
+        "img": "features/free_revision_round.jpg",
+        "imgAlt": "free_revision_round",
+        "headingBg": "Get free Revisions and one week of free maintenance",
+        "headingSm": "Free Revision Rounds",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "img": "features/24_7_support.jpg",
+        "imgAlt": "24_7_support",
+        "headingBg": "Working with us, you will be getting 24/7 priority support",
+        "headingSm": "24/7 Support",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        "img": "features/quick_delivery.jpg",
+        "imgAlt": "quick_delivery",
+        "headingBg": "Guaranteed 1 week delivery for standard five pager website",
+        "headingSm": "Quick Delivery",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    }
+]

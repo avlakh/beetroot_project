@@ -1,0 +1,21 @@
+[
+    {
+        "heading": "Building stellar websites for early startups",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        "heroImg": "home/hero_sec_img.svg",
+        "heroImgAlt": "finsweet_hero_image",
+        "arrowBtnStatus": true,
+        "roundBtnText": "View our work",
+        "roundBtnLink": "works"
+    },
+    {
+        "heading": "All the features you need",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "heroImg": "features/hero_sec_img.svg",
+        "heroImgAlt": "finsweet_hero_image",
+        "arrowBtnStatus": false,
+        "roundBtnText": "View pricing",
+        "roundBtnLink": "pricing"
+    }
+
+]
