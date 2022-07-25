@@ -329,6 +329,27 @@
 	}
 }
 
+// our blog 
+
+.our_blog {
+	margin-bottom: 128px;
+	.heading_link {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 64px;
+		margin-bottom: 64px;
+		&:hover {
+			color: $royal-blue;
+		}
+	}
+}
+
+.blog_card_wrap {
+	display: flex;
+	gap: 32px;
+}
+
 // responsive for index 
 
 @media screen and (max-width: 1200px) {
@@ -398,6 +419,9 @@
 	.our_blog {
 		margin-bottom: 64px;
 	}
+	.blog_card_wrap {
+		flex-wrap: wrap;
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -440,6 +464,11 @@
 		padding: 16px 32px;
 	}
 	.our_blog {
+		margin-bottom: 32px;
+	}
+	.our_blog .heading_link {
+		font-size: 36px;
+		line-height: 44px;
 		margin-bottom: 32px;
 	}
 }

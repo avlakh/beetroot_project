@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="clients">
+	<section class="clients" v-if="homeSliderArr !== null">
 		<div class="container">
 			<div class="clients_flex">
 				<div class="clients_flex_descr">
@@ -163,7 +163,23 @@
 			</div>
 		</div>
 	</section>
-	<blog-cards/>
+	<section class="our_blog">
+		<div class="container">
+			<router-link to="/blog" class="heading_link">Our blog</router-link>
+			<div class="blog_card_wrap">
+				<template  v-for="(item, i) in blogCardArr" >
+					<blog-cards :key="i" v-if="i === 0" :item="item"/>
+				</template>
+				<template  v-for="(item, i) in blogCardArr" >
+					<blog-cards :key="i" v-if="i === 1" :item="item"/>
+				</template>
+				<template  v-for="(item, i) in blogCardArr" >
+					<blog-cards :key="i" v-if="i === 2" :item="item"/>
+				</template>
+			</div>
+		</div>
+	</section>
+	
 </template>
 
 <script>
@@ -198,7 +214,8 @@ export default {
 			weWorkCardArr: [],
 			featureCardsArr: [],
 			homeSectionArr: [],
-			homeSliderArr: [],
+			blogCardArr: [],
+			homeSliderArr: null,
 			ourProjectsArr: [],
 			sliderSettings: {
 				itemsToShow: 1,
@@ -246,6 +263,11 @@ export default {
 			.get('data/Works/WorksCard.json')
 			.then(resp=>{
 				this.ourProjectsArr = resp.data;
+			}),
+		axios
+			.get('data/BlogCard.json')
+			.then(resp=>{
+				this.blogCardArr = resp.data;
 			})
 	}, 
 	methods: {

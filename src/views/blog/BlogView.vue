@@ -26,7 +26,8 @@
 						<div class="blog_card" v-if="index > 0">
 							<router-link :to="{name: 'blog-page', params:{title: item.title}}">
 								<div class="blog_card_img">
-									<img :src="item.urlToImage" :alt="item.title" @error="imgPlaceholder">
+									<img v-if="item.urlToImage !== null" :src="item.urlToImage" :alt="item.title" @error="imgPlaceholder">
+									<img v-else :src="require('@/assets/images/placeholder.png')" :alt="item.title">
 								</div>
 								<h6>{{item.publishedAt}}</h6>
 								<h5>{{item.title}}</h5>

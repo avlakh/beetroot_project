@@ -49,24 +49,24 @@
 		</template>
 	</section>
 	<section class="our_team">
-			<div class="container">
-				<h2>Meet our team</h2>
-				<div class="our_team_grid">
-					<template v-for="(item, i) in teamCardsArr">
-						<team-cards :key="i" v-if="i === 0" :item="item"/>
-					</template>
-					<template v-for="(item, i) in teamCardsArr">
-						<team-cards :key="i" v-if="i === 1" :item="item"/>
-					</template>
-					<template v-for="(item, i) in teamCardsArr">
-						<team-cards :key="i" v-if="i === 2" :item="item"/>
-					</template>
-					<template v-for="(item, i) in teamCardsArr">
-						<team-cards :key="i" v-if="i === 3" :item="item"/>
-					</template>
-				</div>
+		<div class="container">
+			<h2>Meet our team</h2>
+			<div class="our_team_grid">
+				<template v-for="(item, i) in teamCardsArr">
+					<team-cards :key="i" v-if="i === 0" :item="item"/>
+				</template>
+				<template v-for="(item, i) in teamCardsArr">
+					<team-cards :key="i" v-if="i === 1" :item="item"/>
+				</template>
+				<template v-for="(item, i) in teamCardsArr">
+					<team-cards :key="i" v-if="i === 2" :item="item"/>
+				</template>
+				<template v-for="(item, i) in teamCardsArr">
+					<team-cards :key="i" v-if="i === 3" :item="item"/>
+				</template>
 			</div>
-		</section>
+		</div>
+	</section>
 </template>
 
 <script>
