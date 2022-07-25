@@ -223,27 +223,27 @@ export default {
 	},
 	created() {
 		axios
-			.get('../data/FeatureCards.json')
+			.get('data/FeatureCards.json')
 			.then (resp =>{
 				this.featureCardsArr = resp.data;
 			}),
 		axios
-			.get('../data/HomeSection.json')
+			.get('data/HomeSection.json')
 			.then (resp =>{
 				this.homeSectionArr = resp.data;
-			})
+			}),
 		axios 
-			.get('../data/WeWork.json')
+			.get('data/WeWork.json')
 			.then (resp=>{
 				this.weWorkCardArr = resp.data
-			})
+			}),
 		axios
-			.get('../data/HomeSlider.json')
+			.get('data/HomeSlider.json')
 			.then(resp=>{
 				this.homeSliderArr = resp.data;
 			}),
 		axios 
-			.get('../data/Works/WorksCard.json')
+			.get('data/Works/WorksCard.json')
 			.then(resp=>{
 				this.ourProjectsArr = resp.data;
 			})

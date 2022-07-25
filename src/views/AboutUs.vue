@@ -103,32 +103,32 @@ export default {
 	},
 	created() {
 		axios
-			.get('../data/OurApproach.json')
+			.get('data/OurApproach.json')
 			.then (resp =>{
 				this.ourApproachArr = resp.data;
 			}),
 		axios 
-			.get('../data/FeatureCards.json')
+			.get('data/FeatureCards.json')
 			.then (resp => {
 				this.featureCardsArr = resp.data;
 			}),
 		axios
-			.get('../data/TeamCards.json')
+			.get('data/TeamCards.json')
 			.then (resp => {
 				this.teamCardsArr = resp.data;
 			}),
 		axios
-			.get('../data/FeaturePartners.json')
+			.get('data/FeaturePartners.json')
 			.then (resp => {
 				this.featurePartnersArr = resp.data;
 			}),
 		axios
-			.get('../data/WhoWeAre.json')
+			.get('data/WhoWeAre.json')
 			.then (resp => {
 				this.whoWeAreArr = resp.data;
 			}),
 		axios
-			.get('../data/OurProcess.json')
+			.get('data/OurProcess.json')
 			.then (resp => {
 				this.ourProcessArr = resp.data;
 			})

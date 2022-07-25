@@ -78,22 +78,22 @@ export default {
 	},
 	created () {
 		axios 
-			.get('../data/HomeSection.json')
+			.get('data/HomeSection.json')
 			.then (resp => {
 				this.homeSectionArr = resp.data;
 			}),
 		axios 
-			.get('../data/FeaturePartners.json')
+			.get('data/FeaturePartners.json')
 			.then (resp => {
 				this.featurePartnersArr = resp.data;
 			}),
 		axios 
-			.get('../data/FeatureCards.json')
+			.get('data/FeatureCards.json')
 			.then (resp => {
 				this.featureCardsArr = resp.data;
 			}),
 		axios
-			.get('../data/OurApproach.json')
+			.get('data/OurApproach.json')
 			.then (resp =>{
 				this.ourApproachArr = resp.data;
 			})

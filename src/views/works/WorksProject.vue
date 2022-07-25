@@ -84,12 +84,12 @@ export default {
 	},
 	created(){
 		axios
-			.get('../data/BuildTogether.json')
+			.get('data/BuildTogether.json')
 			.then(resp=>{
 				this.buildTogetherArr = resp.data;
 			}),
 		axios
-			.get(`../data/Works/WorksProject-${this.$route.params.slug}.json`)
+			.get(`data/Works/WorksProject-${this.$route.params.slug}.json`)
 			.then(resp=>{
 				this.item = resp.data;
 			})

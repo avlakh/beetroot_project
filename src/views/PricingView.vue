@@ -41,7 +41,7 @@ export default {
 	},
 	created () {
 		axios 
-			.get('../data/PricingCards.json')
+			.get('data/PricingCards.json')
 			.then(resp=>{
 				this.pricingCardsArr = resp.data;
 			})
