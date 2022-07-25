@@ -57,13 +57,13 @@ export default {
 	},
 	created(){
 		axios
-			.get('../data/Works/WorksCard.json')
+			.get('data/Works/WorksCard.json')
 			.then(resp=>{
 				this.worksCardArr = resp.data;
 				this.getTypesList();
 			}),
 		axios
-			.get('../data/BuildTogether.json')
+			.get('data/BuildTogether.json')
 			.then(resp=>{
 				this.buildTogetherArr = resp.data;
 			})
