@@ -1,0 +1,11 @@
+[
+    {
+        "headingSm": "Who we are",
+        "headingOne": "Goal focused",
+        "paragraphOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "headingTwo": "Continuous improvement",
+        "paragraphTwo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "img": "who_we_are_guy_with_the_board.jpg",
+        "imgAlt": "guy_showing_the_board"
+    }
+]

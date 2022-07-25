@@ -1,0 +1,26 @@
+[
+    {
+        "img": "john_smith.png",
+        "imgAlt": "john_smith",
+        "headingName": "John Smith",
+        "headingPosition": "CEO"
+    },
+    {
+        "img": "simon_adams.png",
+        "imgAlt": "simon_adams",
+        "headingName": "Simon Adams",
+        "headingPosition": "CTO"
+    },
+    {
+        "img": "paul_jones.png",
+        "imgAlt": "paul_jones",
+        "headingName": "Paul Jones",
+        "headingPosition": "Design Lead"
+    },
+    {
+        "img": "sara_hardin.png",
+        "imgAlt": "sara_hardin",
+        "headingName": "Sara Hardin",
+        "headingPosition": "Project Manager"
+    }
+]

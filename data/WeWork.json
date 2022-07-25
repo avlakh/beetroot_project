@@ -1,0 +1,26 @@
+[
+    {
+        "img": "pointer_1.svg",
+        "imgAlt": "we_work_pointer1",
+        "heading": "Strategy",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam."
+    },
+    {
+        "img": "pointer_2.svg",
+        "imgAlt": "we_work_pointer2",
+        "heading": "Wireframing",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam."
+    },
+    {
+        "img": "pointer_3.svg",
+        "imgAlt": "we_work_pointer3",
+        "heading": "Design",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam."
+    },
+    {
+        "img": "pointer_4.svg",
+        "imgAlt": "we_work_pointer4",
+        "heading": "Development",
+        "paragraph": "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam."
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "img": "template_card_1.jpg",
+        "imgAlt": "template_card_1",
+        "heading": "Template 1",
+        "descr": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        "type": "Figma",
+        "slug": "template-1"
+    },
+    {
+        "img": "template_card_2.jpg",
+        "imgAlt": "template_card_2",
+        "heading": "Template 2",
+        "descr": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        "type": "UI",
+        "slug": "template-2"
+    },
+    {
+        "img": "template_card_3.jpg",
+        "imgAlt": "template_card_3",
+        "heading": "Template 3",
+        "descr": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        "type": "UI",
+        "slug": "template-3"
+    },
+    {
+        "img": "template_card_4.jpg",
+        "imgAlt": "template_card_4",
+        "heading": "Template 4",
+        "descr": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        "type": "Figma",
+        "slug": "template-4"
+    },
+    {
+        "img": "template_card_5.jpg",
+        "imgAlt": "template_card_5",
+        "heading": "Template 5",
+        "descr": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        "type": "Webflow",
+        "slug": "template-5"
+    },
+    {
+        "img": "template_card_6.jpg",
+        "imgAlt": "template_card_6",
+        "heading": "Template 6",
+        "descr": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        "type": "Figma",
+        "slug": "template-6"
+    }
+]

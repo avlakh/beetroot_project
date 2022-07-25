@@ -1,0 +1,28 @@
+[
+    {
+        "partnersNums": "100.000+",
+        "partnersDescr": "Finsweet Users",
+        "logos": [
+            {
+                "img": "logo1.svg",
+                "alt": "logo1"
+            },
+            {
+                "img": "logo2.svg",
+                "alt": "logo2"
+            },
+            {
+                "img": "logo3.svg",
+                "alt": "logo3"
+            },
+            {
+                "img": "logo4.svg",
+                "alt": "logo4"
+            },
+            {
+                "img": "logo5.svg",
+                "alt": "logo5"
+            }
+        ]
+    }
+]
