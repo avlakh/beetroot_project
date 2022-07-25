@@ -6,7 +6,7 @@
 					<div v-for="(item, index) in list" :key="index" class="blog_card">
 						<router-link :to="{name: 'blog-page', params:{title: item.title}}">
 							<div class="blog_card_img">
-								<img :src="item.urlToImage" :alt="item.title">
+								<img :src="item.urlToImage" :alt="item.title" @error="imgPlaceholder">
 							</div>
 							<h6>{{item.publishedAt}}</h6>
 							<h5>{{item.title}}</h5>
@@ -54,6 +54,11 @@ export default {
 				.catch(()=>{
 					this.$router.push('/404')
 				})
+	},
+	methonds: {
+		imgPlaceholder(e){
+			e.target.src = require('@/assets/images/placeholder.png')
+		}
 	}
 }
 </script>
