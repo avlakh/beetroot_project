@@ -57,6 +57,7 @@ export default {
 	methods: {
 		toggleMobileMenu(){
 			this.isMobileMenuOpened = !this.isMobileMenuOpened;
+			document.querySelector('body').classList.toggle('hidden')
 		}
 	}
 }
@@ -64,4 +65,8 @@ export default {
 
 <style lang="scss" scoped>
 	@import '@/assets/css/header.scss';
+</style>
+
+<style lang="scss">
+	
 </style>
