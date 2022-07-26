@@ -116,7 +116,7 @@ p {
 
 @media screen and (max-width: 1200px) {
 	.faqs {
-		padding: 60px 0;
+		padding: 60px 0 0;
 	}
 	.faqs_flex {
 		flex-wrap: wrap;
@@ -138,10 +138,21 @@ p {
 
 @media screen and (max-width: 400px) {
 	.vcp {
-		margin-bottom: 60px;
+		margin-bottom: 65px;
+		&:last-of-type {
+			margin-bottom: 40px;
+		}
 	}
 }
 
+</style>
+
+<style lang="scss">
+	@media screen and (max-width: 700px) {
+	.vcpg .vcp__header {
+		margin-bottom: 20px;
+	}
+}
 </style>
 
 <script>
