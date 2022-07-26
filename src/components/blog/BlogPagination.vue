@@ -119,7 +119,7 @@ export default {
 	--bs-pagination-disabled-bg: #fff;
 	--bs-pagination-disabled-border-color: #dee2e6;
 	display: flex;
-	padding-left: 0;
+	padding: 0px 20px;
 	list-style: none
 }
 
@@ -188,6 +188,12 @@ export default {
 .page-item:last-child .page-link {
 	border-top-right-radius: var(--bs-pagination-border-radius);
 	border-bottom-right-radius: var(--bs-pagination-border-radius)
+}
+
+@media screen and (max-width: 500px) {
+	.pagination {
+		flex-wrap: wrap;
+	}
 }
 
 </style>

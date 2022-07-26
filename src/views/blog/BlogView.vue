@@ -26,7 +26,7 @@
 						<div class="blog_card" v-if="index > 0">
 							<router-link :to="{name: 'blog-page', params:{title: item.title}}">
 								<div class="blog_card_img">
-									<img v-if="item.urlToImage !== null" :src="item.urlToImage" :alt="item.title" @error="imgPlaceholder">
+									<img v-if="item.urlToImage !== null" :src="item.urlToImage" :alt="item.title">
 									<img v-else :src="require('@/assets/images/placeholder.png')" :alt="item.title">
 								</div>
 								<h6>{{item.publishedAt}}</h6>
@@ -82,21 +82,18 @@ export default {
 				.get(url)
 				.then(resp=>{
 					if (resp.data.articles.length === 0) {
-						this.$router.push('/404')
+						this.$router.push('/404');
 					}
 					this.list = resp.data.articles;
 					this.total = Math.ceil(resp.data.totalResults / 18);	
 				})
 				.catch(()=>{
-					this.$router.push('/404')
+					this.$router.push('/404');
 				})
 		},
 		goToPage(new_page) {
 			this.page = new_page;
 			this.fetchData();
-		},
-		imgPlaceholder(e){
-			e.target.src = require('@/assets/images/placeholder.png')
 		}
 	}
 }

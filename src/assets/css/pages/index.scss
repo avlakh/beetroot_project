@@ -358,7 +358,7 @@
 	}
 	.our_projects_small_grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
 	}
 	.features {
 		padding: 60px 0 64px;
@@ -470,5 +470,9 @@
 		font-size: 36px;
 		line-height: 44px;
 		margin-bottom: 32px;
+	}
+	.arrow_wrap .arrow_btn::before,
+	.arrow_wrap .arrow_btn::after {
+		content: none;
 	}
 }

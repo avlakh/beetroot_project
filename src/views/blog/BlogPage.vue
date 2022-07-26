@@ -5,7 +5,8 @@
 				<p><span class="blog_home_author_name">{{item.author}}</span><span><time>{{item.publishedAt}}</time></span></p>
 			</div>
 			<div class="blog_home_img">
-				<img :src="item.urlToImage" :alt="item.title">
+				<img v-if="item.urlToImage !== null" :src="item.urlToImage" :alt="item.title">
+				<img v-else :src="require('@/assets/images/placeholder.png')" :alt="item.title">
 			</div>
 		</section>
 		<section class="blog_text text_container">
@@ -30,11 +31,11 @@ export default {
 			.then(resp=>{
 				this.item = resp.data.articles[0]
 				if (resp.data.articles.length === 0) {
-					this.$router.push('/404')
+					this.$router.push('/404');
 				}
 			})
 			.catch(()=>{
-				this.$router.push('/404')
+				this.$router.push('/404');
 			})
 	}
 }

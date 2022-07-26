@@ -124,6 +124,12 @@ p {
 	}
 }
 
+@media screen and (max-width: 1200px){
+	p {
+		padding-left: 0px;
+	}
+}
+
 @media screen and (max-width: 700px) {
 	.vcp {
 		margin-bottom: 20px;
@@ -148,11 +154,11 @@ p {
 </style>
 
 <style lang="scss">
-	@media screen and (max-width: 700px) {
-	.vcpg .vcp__header {
-		margin-bottom: 20px;
+	@media screen and (max-width: 500px) {
+		.vcp__body .vcp__body-content {
+			padding-top: 45px;
+		}
 	}
-}
 </style>
 
 <script>

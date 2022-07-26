@@ -252,7 +252,7 @@ export default {
 		axios 
 			.get('data/WeWork.json')
 			.then (resp=>{
-				this.weWorkCardArr = resp.data
+				this.weWorkCardArr = resp.data;
 			}),
 		axios
 			.get('data/HomeSlider.json')
@@ -303,30 +303,30 @@ export default {
 				axios 
 					.get(url)
 					.then(resp=>{
-					return resp.data
+						return resp.data
 					})
 					.then(resp=>{
 						if (resp.ok){
-							this.answer.success = true
-							this.answer.text = 'Message successfully sent'
-							this.name = this.email = this.message = ''
+							this.answer.success = true;
+							this.answer.text = 'Message successfully sent';
+							this.name = this.email = this.message = '';
 
 						} else {
-							this.answer.success = false
-							this.answer.text = 'Some error occurs. Please try again later'
+							this.answer.success = false;
+							this.answer.text = 'Some error occurs. Please try again later';
 						}
 						setTimeout(()=>{
-							this.answer.success = null
-							this.answer.text = ''
+							this.answer.success = null;
+							this.answer.text = '';
 						}, 3000)
 					})
 					.catch(()=>{
-						this.answer.success = false
-						this.answer.text = 'AJAX error. Please try again later'
+						this.answer.success = false;
+						this.answer.text = 'AJAX error. Please try again later';
 					})}
 			},
 			resetError(fld){
-			this.errors[fld] = '';
+				this.errors[fld] = '';
 			},
 			isValidEmail(email){
 				return Boolean(email.match(

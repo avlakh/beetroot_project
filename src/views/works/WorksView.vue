@@ -72,8 +72,7 @@ export default {
 		cardList(){
 			let arr = [];
 			if (this.type !== ''){
-				arr = this.worksCardArr.filter(el=>el.type === this.type)
-				
+				arr = this.worksCardArr.filter(el=>el.type === this.type);
 			} else {
 				arr = this.worksCardArr;
 			}
@@ -83,7 +82,7 @@ export default {
 			let arr = [];
 			this.worksCardArr.forEach(el=>{
 				if (arr.indexOf(el.type) === -1){
-					arr.push(el.type)
+					arr.push(el.type);
 				}
 			})
 			this.typesList = arr;
