@@ -1,13 +1,10 @@
 <template>
 	<div class="templates_card">
+		<router-link :to="{name: 'works-project', params:{slug: item.slug}}" class="router_link_wrap"></router-link>
 		<div class="templates_card_img">
-			<router-link :to="{name: 'works-project', params:{slug: item.slug}}">
-				<img :src="require('@/assets/images/works/templates/'+item.img)" :alt="item.imgAlt">
-			</router-link>
+			<img :src="require('@/assets/images/works/templates/'+item.img)" :alt="item.imgAlt">
 		</div>
-		<router-link :to="{name: 'works-project', params:{slug: item.slug}}">
-			<h3>{{item.heading}}</h3>
-		</router-link>
+		<h3>{{item.heading}}</h3>
 		<p>{{item.descr}}</p>
 		<router-link :to="{name: 'works-project', params:{slug: item.slug}}" class="arrow_btn">View Portfolio</router-link>
 	</div>
@@ -27,6 +24,16 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/vars.scss';
 .templates_card {
+	position: relative;
+	.router_link_wrap {
+		display: block;
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 90%;
+	}
 	h3 {
 		margin-bottom: 14px;
 	}

@@ -70,6 +70,16 @@
 
 .blog_card {
 	width: 100%;
+	position: relative;
+	.router_link_wrap {
+		display: block;
+		z-index: 10;
+		width: 100%;
+		height: 90%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 	.blog_card_img {
 		position: relative;
 		padding-top: 53%;

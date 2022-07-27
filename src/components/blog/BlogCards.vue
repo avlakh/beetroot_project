@@ -1,13 +1,14 @@
 <template>
 	<div class="blog_card">
-		<router-link to="#">
-			<div class="blog_card_img">
-				<img :src="require('@/assets/images/home/blog_card/'+item.img)" :alt="item.imgAlt">
-			</div>
+		<router-link to="#" class="router_link_wrap"></router-link>
+		<div class="blog_card_img">
+			<img :src="require('@/assets/images/home/blog_card/'+item.img)" :alt="item.imgAlt">
+		</div>
+		<div class="blog_card_content">
 			<h6>{{item.published}}</h6>
 			<h5>{{item.title}}</h5>
 			<p>{{item.descr}}</p>
-		</router-link>
+		</div>
 		<router-link to="#" class="arrow_btn">Read More</router-link>
 	</div>
 </template>
@@ -29,6 +30,16 @@ export default {
 
 .blog_card {
 	width: 33%;
+	position: relative;
+	.router_link_wrap {
+		z-index: 10;
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 90%;
+		top: 0;
+		left: 0;
+	}
 	.blog_card_img {
 		position: relative;
 		padding-top: 53%;

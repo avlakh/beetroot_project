@@ -24,15 +24,14 @@
 				<div class="blog_card_wrap">
 					<template v-for="(item, index) in list" :key="index">
 						<div class="blog_card" v-if="index > 0">
-							<router-link :to="{name: 'blog-page', params:{title: item.title}}">
-								<div class="blog_card_img">
-									<img v-if="item.urlToImage !== null" :src="item.urlToImage" :alt="item.title">
-									<img v-else :src="require('@/assets/images/placeholder.png')" :alt="item.title">
-								</div>
-								<h6>{{item.publishedAt}}</h6>
-								<h5>{{item.title}}</h5>
-								<p v-html="item.description"></p>
-							</router-link>
+							<router-link :to="{name: 'blog-page', params:{title: item.title}}" class="router_link_wrap"></router-link>
+							<div class="blog_card_img">
+								<img v-if="item.urlToImage !== null" :src="item.urlToImage" :alt="item.title">
+								<img v-else :src="require('@/assets/images/placeholder.png')" :alt="item.title">
+							</div>
+							<h6>{{item.publishedAt}}</h6>
+							<h5>{{item.title}}</h5>
+							<p v-html="item.description"></p>
 							<router-link :to="{name: 'blog-page', params:{title: item.title}}" class="arrow_btn">Read More</router-link>
 						</div>
 					</template>
