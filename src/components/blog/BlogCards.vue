@@ -1,11 +1,13 @@
 <template>
 	<div class="blog_card">
-		<div class="blog_card_img">
-			<img :src="require('@/assets/images/home/blog_card/'+item.img)" :alt="item.imgAlt">
-		</div>
-		<h6>{{item.published}}</h6>
-		<h5>{{item.title}}</h5>
-		<p>{{item.descr}}</p>
+		<router-link to="#">
+			<div class="blog_card_img">
+				<img :src="require('@/assets/images/home/blog_card/'+item.img)" :alt="item.imgAlt">
+			</div>
+			<h6>{{item.published}}</h6>
+			<h5>{{item.title}}</h5>
+			<p>{{item.descr}}</p>
+		</router-link>
 		<router-link to="#" class="arrow_btn">Read More</router-link>
 	</div>
 </template>
