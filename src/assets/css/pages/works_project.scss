@@ -92,15 +92,18 @@
 
 .case_keywords {
 	padding-top: 46px;
+	.case_container {
+		border-top: 1px solid $dark-blue;
+		border-bottom: 1px solid $dark-blue;
+	}
 }
 
 .case_keywords_flex {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: 70px;
 	padding: 26px 0 22px;
-	border-top: 1px solid $dark-blue;
-	border-bottom: 1px solid $dark-blue;
 	h5 {
 		font-size: 24px;
 		line-height: 36px;

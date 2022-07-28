@@ -47,7 +47,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="case_keywords case_container">
+		<section class="case_keywords">
 			<div class="case_container">
 				<div class="case_keywords_flex">
 					<h5>Keywords</h5>
