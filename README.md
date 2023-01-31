@@ -8,7 +8,7 @@ This project is powered by Vue 3 framework and includes 11 webpages - 2 of those
 
 List of technologies used in a project: Vue3, Vanilla JS, Telegram API, SCSS, RWD optimized, Axios, slider & accordion plugins, basic SEO. 
 
-Here's the link to the website - https://avlakh.github.io/beetroot_project/#/
+Here's the [link to the website.](https://avlakh.github.io/beetroot_project/#/)
 
 Please let me know if you have any feedback or suggestions - I'm happy to improve it :)
 
