@@ -4,7 +4,7 @@ My name is Artem Vlakh and I am a junior frontend developer. Having worked my wa
 
 This project is a website of a webdesign studio called "{finsweet" that helps customers create their own websites. 
 
-This project is powered by Vue 3 framework and includes 11 webpages - 2 of those are templates for dynamic creation. I've used the components approach, trying to avoid the repetitive code. Also, I've used NEWS Api, but unfortunately version that is deployed to Github can't allow you to view, but the functionality is in the code :) 
+This project is powered by Vue 3 framework and includes 11 webpages - 2 of those are templates for dynamic webpages. I've used the components approach, trying to avoid the repetitive code. Also, I've used NEWS Api, but unfortunately due to localhost limitation of the API, the Github-hosted version doesn't show the live functionality. You can check the code though ;) 
 
 RWD is fully optimized. 
 
